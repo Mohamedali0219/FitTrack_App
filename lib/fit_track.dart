@@ -1,4 +1,5 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
+import 'package:fit_track_app/features/meals/ui/meals_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,7 +18,7 @@ class FitTrackApp extends StatelessWidget {
               ColorScheme.fromSeed(seedColor: ColorsManager.orangeColor),
           useMaterial3: true,
         ),
-        home: Scaffold(),
+        home: MealsScreen(),
       ),
     );
   }
