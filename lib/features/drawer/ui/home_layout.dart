@@ -1,4 +1,5 @@
 import 'package:fit_track_app/core/constants.dart';
+import 'package:fit_track_app/features/bottom_nav_bar/ui/bottom_nav_bar.dart';
 import 'package:fit_track_app/features/drawer/data/menu_model.dart';
 import 'package:fit_track_app/features/drawer/ui/drawer_widget.dart';
 import 'package:fit_track_app/features/home/ui/home_screen.dart';
@@ -48,7 +49,7 @@ class _HomeLayoutState extends State<HomeLayout> {
   Widget getScreen() {
     switch(currentItem){
       case MenuItems.dashboard:
-        return const HomeScreen();
+        return const BottomNavBar();
       case MenuItems.myProgress:
         return const HomeScreen();
       case MenuItems.training:
