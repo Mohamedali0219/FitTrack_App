@@ -5,4 +5,6 @@ class Routes {
   static const String appLayout = 'appLayout';
   static const String loginScreen = 'loginScreen';
   static const String registerScreen = 'registerScreen';
+  static const String mealDetailScreen = 'mealDetailScreen';
+  static const String mealsScreen = 'mealScreen';
 }

@@ -1,4 +1,6 @@
 import 'package:fit_track_app/core/routes/routes.dart';
+import 'package:fit_track_app/features/meals/ui/meals_detials_screen.dart';
+import 'package:fit_track_app/features/meals/ui/meals_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -6,6 +8,12 @@ class AppRoutes {
     switch (settings.name) {
       case Routes.splashScreen:
       // return MaterialPageRoute(builder: (_) => const Scaffold());
+
+      case Routes.mealsScreen:
+        return MaterialPageRoute(builder: (_) => const MealsScreen());
+
+      case Routes.mealDetailScreen:
+        return MaterialPageRoute(builder: (_) => const MealsDetialsScreen());
     }
     return null;
   }

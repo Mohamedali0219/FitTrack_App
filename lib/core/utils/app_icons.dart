@@ -5,4 +5,5 @@ class AppIcons {
   static const String kcalIcon = 'assets/icons/kcal.svg';
   static const String clockIcon = 'assets/icons/clock.svg';
   static const String lineIcon = 'assets/icons/Line.svg';
+  static const String arrowBackIcon = 'assets/icons/Back.svg';
 }

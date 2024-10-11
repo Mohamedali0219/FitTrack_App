@@ -1,4 +1,4 @@
-import 'package:fit_track_app/features/meals/ui/widgets/meal_types_item.dart';
+import 'package:fit_track_app/features/meals/ui/widgets/meals_screen_widget/meal_types_item.dart';
 import 'package:flutter/material.dart';
 
 class MealTypesListView extends StatefulWidget {
