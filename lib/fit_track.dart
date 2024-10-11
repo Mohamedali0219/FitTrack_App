@@ -14,6 +14,7 @@ class FitTrackApp extends StatelessWidget {
         title: 'Fit Track',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          scaffoldBackgroundColor: ColorsManager.whiteColor,
           colorScheme: ColorScheme.fromSeed(
             seedColor: ColorsManager.orangeColor,
           ),
