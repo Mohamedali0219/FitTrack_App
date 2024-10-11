@@ -1,3 +1,4 @@
+import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:flutter/material.dart';
 import 'sign_up_screen.dart';
 
@@ -73,7 +74,13 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => const HomeLayout(),
+                          ),
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         backgroundColor: Colors.black,

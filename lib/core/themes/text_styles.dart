@@ -5,8 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 abstract class TextStyles {
   static String montserrat = 'Montserrat';
   static String bebasNeue = 'BebasNeue';
-  static TextStyle styleRegular(context,
-      {Color? color, double? fontSize, String? fontFamily}) {
+
+  static TextStyle styleRegular(
+    context, {
+    Color? color,
+    double? fontSize,
+    String? fontFamily,
+  }) {
     return TextStyle(
       color: color ?? ColorsManager.textBaseColor,
       fontSize: fontSize ?? 16.sp,
@@ -15,8 +20,12 @@ abstract class TextStyles {
     );
   }
 
-  static TextStyle styleMedium(context,
-      {Color? color, double? fontSize, String? fontFamily}) {
+  static TextStyle styleMedium(
+    context, {
+    Color? color,
+    double? fontSize,
+    String? fontFamily,
+  }) {
     return TextStyle(
       color: color ?? ColorsManager.textBaseColor,
       fontSize: fontSize ?? 16.sp,
@@ -25,8 +34,12 @@ abstract class TextStyles {
     );
   }
 
-  static TextStyle styleSemiBold(context,
-      {Color? color, double? fontSize, String? fontFamily}) {
+  static TextStyle styleSemiBold(
+    context, {
+    Color? color,
+    double? fontSize,
+    String? fontFamily,
+  }) {
     return TextStyle(
       color: color ?? ColorsManager.textBaseColor,
       fontSize: fontSize ?? 16.sp,
@@ -35,8 +48,12 @@ abstract class TextStyles {
     );
   }
 
-  static TextStyle styleBold(context,
-      {Color? color, double? fontSize, String? fontFamily}) {
+  static TextStyle styleBold(
+    context, {
+    Color? color,
+    double? fontSize,
+    String? fontFamily,
+  }) {
     return TextStyle(
       color: color ?? ColorsManager.textBaseColor,
       fontSize: fontSize ?? 16.sp,
