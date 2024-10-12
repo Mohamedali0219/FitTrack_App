@@ -1,6 +1,7 @@
 import 'package:fit_track_app/core/routes/routes.dart';
 import 'package:fit_track_app/features/meals/ui/meals_detials_screen.dart';
 import 'package:fit_track_app/features/meals/ui/meals_screen.dart';
+import 'package:fit_track_app/features/training/ui/training_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -14,6 +15,9 @@ class AppRoutes {
 
       case Routes.mealDetailScreen:
         return MaterialPageRoute(builder: (_) => const MealsDetialsScreen());
+
+      case Routes.trainingScreen:
+        return MaterialPageRoute(builder: (_) => const TrainingScreen());
     }
     return null;
   }

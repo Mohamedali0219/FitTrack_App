@@ -14,12 +14,12 @@ class _PopularExerciseListviewState extends State<PopularExerciseListview> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260*2, // Adjust height as needed
+      height: 260*3, // Adjust height as needed
       child: ListView.separated(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
-        itemCount: 2,
+        itemCount: 3,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {

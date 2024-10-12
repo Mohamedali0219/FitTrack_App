@@ -6,6 +6,7 @@ import 'package:fit_track_app/features/home/ui/widget/header_part_widget/header_
 import 'package:fit_track_app/features/home/ui/widget/home_app_bar_widget/home_app_bar_widget.dart';
 import 'package:fit_track_app/features/home/ui/widget/meal_plans_widget/meal_plans_listview.dart';
 import 'package:fit_track_app/features/home/ui/widget/popular_exercise_widget/popular_exercise_listview.dart';
+import 'package:fit_track_app/features/training/ui/training_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -53,7 +54,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  HeaderPartWidget(onPressed: (){}, title: 'Popular Exercise', hasSeeAll: true,),
+                  HeaderPartWidget(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const TrainingScreen(),));}, title: 'Popular Exercise', hasSeeAll: true,),
                   const PopularExerciseListview(),
                   const SizedBox(
                     height: 20,
