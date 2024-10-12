@@ -1,4 +1,5 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
+import 'package:fit_track_app/features/favorite_btn/ui/favorite_btn_widget/favorite_btn_widget.dart';
 import 'package:flutter/material.dart';
 
 class PopularExerciseItems extends StatefulWidget {
@@ -9,6 +10,8 @@ class PopularExerciseItems extends StatefulWidget {
 }
 
 class _PopularExerciseItemsState extends State<PopularExerciseItems> {
+  bool isSelected = false;
+  bool isLocked = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,15 +20,37 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            width: 300,
-            height: 155,
-            decoration: const ShapeDecoration(
-              image: DecorationImage(image: AssetImage('assets/images/exercise1.png')),
-              shape: ContinuousRectangleBorder(),
-            ),
+          Stack(
+            alignment: Alignment.topRight,
+            children: [
+              Container(
+                width: 300,
+                height: 155,
+                decoration: const ShapeDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/exercise1.png'),
+                  ),
+                  shape: ContinuousRectangleBorder(),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 10.0,
+                  right: 10.0,
+                ),
+                child: GestureDetector(
+                  onTap: (){
+                    setState(() {
+                      isSelected = !isSelected;
+                    });
+                  },
+                  child: FavoriteBtnWidget(isSelected: isSelected,isLocked: false,),),
+              ),
+            ],
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           const Text(
             'Full Shot Man Stretching Arm',
             style: TextStyle(
@@ -35,7 +60,9 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
               fontWeight: FontWeight.w600,
             ),
           ),
-          const SizedBox(height: 8,),
+          const SizedBox(
+            height: 8,
+          ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -49,15 +76,25 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(width: 9,),
+              const SizedBox(
+                width: 9,
+              ),
               Container(
                 height: 8,
                 width: 1,
                 color: const Color(0xFF707070),
               ),
-              const SizedBox(width: 11,),
-              const Icon(Icons.timer_outlined, color: Color(0xFF00ADB5), size: 10,),
-              const SizedBox(width: 6,),
+              const SizedBox(
+                width: 11,
+              ),
+              const Icon(
+                Icons.timer_outlined,
+                color: Color(0xFF00ADB5),
+                size: 10,
+              ),
+              const SizedBox(
+                width: 6,
+              ),
               const Text(
                 '30 min',
                 style: TextStyle(

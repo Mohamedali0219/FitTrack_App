@@ -7,4 +7,5 @@ class Routes {
   static const String registerScreen = 'registerScreen';
   static const String mealDetailScreen = 'mealDetailScreen';
   static const String mealsScreen = 'mealScreen';
+  static const String trainingScreen = 'trainingScreen';
 }

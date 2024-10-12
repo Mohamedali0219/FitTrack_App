@@ -2,13 +2,12 @@ import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
-class GoalTypesItems extends StatelessWidget {
-  const GoalTypesItems(
-      {super.key, this.isSelected = false, required this.goalType});
+class TrainingLevelItems extends StatelessWidget {
+  const TrainingLevelItems({super.key, this.isSelected = false, required this.levelType});
 
   final bool isSelected;
-  final String goalType;
 
+  final String levelType;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,7 +19,7 @@ class GoalTypesItems extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          goalType,
+          levelType,
           style: TextStyles.styleBold(
             context,
             fontSize: 11,
