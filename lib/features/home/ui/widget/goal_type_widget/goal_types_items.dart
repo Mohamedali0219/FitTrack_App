@@ -12,20 +12,22 @@ class GoalTypesItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.only(right: 4, left: 4),
       decoration: BoxDecoration(
         color: isSelected ? ColorsManager.blackColor : Colors.grey[200],
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Text(
-        goalType,
-        style: TextStyles.styleBold(
-          context,
-          fontSize: 11,
-          color: isSelected
-              ? ColorsManager.whiteColor
-              : ColorsManager.textSecondaryColor,
+      child: Center(
+        child: Text(
+          goalType,
+          style: TextStyles.styleBold(
+            context,
+            fontSize: 11,
+            color: isSelected
+                ? ColorsManager.whiteColor
+                : ColorsManager.textSecondaryColor,
+          ),
         ),
       ),
     );
