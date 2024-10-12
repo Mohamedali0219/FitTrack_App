@@ -6,6 +6,16 @@ Widget defaultTextFormField({
   required String label,
   final Function(String)? onFieldSubmitted,
   final Function(String)? onChange,
+  String? Function(String?)? validator,
+  final Function()? onTap,
+  final Function()? onEditingComplete,
+  final Function()? onSaved,
+  final IconData? prefixIcon,
+  final IconData? suffixIcon,
+  final bool isPassword = false,
+  final bool readOnly = false,
+  final bool enabled = true,
+  final String? hintText,
   double radius = 0.0,
   bool obscureText = false,
   keyboardType = TextInputType.text,
@@ -23,6 +33,11 @@ Widget defaultTextFormField({
         ),
         const SizedBox(height: 5),
         TextFormField(
+          onTap: onTap,
+          onEditingComplete: onEditingComplete,
+
+ 
+
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
@@ -40,14 +55,17 @@ Widget defaultTextFormField({
             // print(value);
           },
           onChanged: onChange,
-          decoration: const InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
-            focusedBorder: OutlineInputBorder(
+          decoration:  InputDecoration(
+            prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+            suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+            hintText: hintText,
+            contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
+            focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                   width: 2,
                   color: ColorsManager.primaryColor), // Set the focused border color
             ),
-            border: OutlineInputBorder(),
+            border: const OutlineInputBorder(),
           ),
         ),
       ],

@@ -2,6 +2,8 @@ import 'package:fit_track_app/core/widgets/custom_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../../core/themes/colors_manager.dart';
+
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
@@ -79,7 +81,7 @@ class SignUpScreen extends StatelessWidget {
                             value: true,
                             onChanged: (value) {},
                             checkColor: Colors.white,
-                            activeColor: Colors.green,
+                            activeColor: ColorsManager.primaryColor,
                           ),
                           const Text("Remember me"),
                         ],
@@ -88,7 +90,7 @@ class SignUpScreen extends StatelessWidget {
                         onPressed: () {},
                         child: const Text(
                           "Forgot password?",
-                          style: TextStyle(color: Colors.green),
+                          style: TextStyle(color: ColorsManager.primaryColor),
                         ),
                       ),
                     ],

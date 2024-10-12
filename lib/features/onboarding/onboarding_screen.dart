@@ -1,4 +1,3 @@
-import 'package:fit_track_app/features/login/login_screen.dart';
 import 'package:fit_track_app/features/onboarding/onboarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +5,7 @@ import "package:smooth_page_indicator/smooth_page_indicator.dart";
 
 import '../../core/themes/colors_manager.dart';
 import '../../core/themes/text_styles.dart';
+import '../auth/ui/login_screen.dart';
 import 'onboarding_view_body.dart';
 
 class OnBoardingScreen extends StatefulWidget {
