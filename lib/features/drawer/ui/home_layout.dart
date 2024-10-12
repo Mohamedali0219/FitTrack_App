@@ -1,6 +1,7 @@
 import 'package:fit_track_app/core/constants.dart';
 import 'package:fit_track_app/features/ap_settings/ui/app_settings_screen.dart';
 import 'package:fit_track_app/features/bottom_nav_bar/ui/bottom_nav_bar.dart';
+import 'package:fit_track_app/features/category/ui/category_screen.dart';
 import 'package:fit_track_app/features/drawer/data/menu_model.dart';
 import 'package:fit_track_app/features/drawer/ui/drawer_widget.dart';
 import 'package:fit_track_app/features/home/ui/home_screen.dart';
@@ -57,7 +58,7 @@ class _HomeLayoutState extends State<HomeLayout> {
       case MenuItems.training:
         return const TrainingScreen();
       case MenuItems.categories:
-        return const MealsScreen();
+        return const CategoryScreen();
       case MenuItems.notification:
         return const MealsScreen();
       case MenuItems.myFavorites:
