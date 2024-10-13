@@ -9,6 +9,7 @@ Widget defaultButton({
   double width = double.infinity,
   double height = 50.5,
   Color background = ColorsManager.primaryColor,
+  Color textColor = Colors.white,
   double radius = 0.0,
   required Function() onPressed,
   required String text,
@@ -27,7 +28,7 @@ Widget defaultButton({
                 text,
                 style: TextStyle(
                   fontSize: fontSize,
-                  color: Colors.white,
+                  color: textColor,
                 ),
               ),
       ),

@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
-class CustomCalendar extends StatefulWidget {
-  const   CustomCalendar({super.key});
+class ReminderDateWidget extends StatefulWidget {
+  const   ReminderDateWidget({super.key});
 
   @override
-  CustomCalendarState createState() => CustomCalendarState();
+  ReminderDateWidgetState createState() => ReminderDateWidgetState();
 }
 
-class CustomCalendarState extends State<CustomCalendar> {
+class ReminderDateWidgetState extends State<ReminderDateWidget> {
   DateTime selectedDate = DateTime.now();
   DateTime currentMonth = DateTime.now();
   ScrollController scrollController = ScrollController();
@@ -26,7 +26,7 @@ class CustomCalendarState extends State<CustomCalendar> {
   }
 
   void scrollToToday() {
-    double position = (DateTime.now().day - 1) * (80 + 16);
+    double position = (DateTime.now().day - 1) * (50 + 16);
     scrollController.animateTo(
       position,
       duration: const Duration(milliseconds: 500),
@@ -39,59 +39,81 @@ class CustomCalendarState extends State<CustomCalendar> {
     return Column(
       children: [
         // Calendar Header
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.arrow_back_ios_new,
-                  size: 20,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.calendar_month_outlined, size: 15, color: ColorsManager.blackColor,),
+                SizedBox(width: 5,),
+                Text('Date', style: TextStyle(
                   color: ColorsManager.textBaseColor,
+                  fontSize: 14,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w600,
                 ),
-                onPressed: () {
-                  setState(() {
-                    currentMonth =
-                        DateTime(currentMonth.year, currentMonth.month - 1);
-                  });
-                },
-              ),
-              Column(
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
-                    DateFormat.MMMM().format(currentMonth),
-                    style: TextStyles.styleBold(
-                      context,
-                      fontSize: 22.sp,
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back_ios_new,
+                      size: 10,
                       color: ColorsManager.textBaseColor,
                     ),
+                    onPressed: () {
+                      setState(() {
+                        currentMonth =
+                            DateTime(currentMonth.year, currentMonth.month - 1);
+                      });
+                    },
                   ),
-                  Text(
-                    DateFormat.y().format(currentMonth),
-                    style: TextStyles.styleRegular(
-                      context,
-                      fontSize: 18.sp,
-                      color: Colors.grey[400],
+                  Column(
+                    children: [
+                      Text(
+                        DateFormat.MMMM().format(currentMonth),
+                        style: TextStyles.styleBold(
+                          context,
+                          fontSize: 14.sp,
+                          color: ColorsManager.textBaseColor,
+                        ),
+                      ),
+                      Text(
+                        DateFormat.y().format(currentMonth),
+                        style: TextStyles.styleRegular(
+                          context,
+                          fontSize: 14.sp,
+                          color: Colors.grey[400],
+                        ),
+                      ),
+                    ],
+                  ),
+                  IconButton(
+                    icon: const Icon(
+                      Icons.arrow_forward_ios,
+                      size: 10,
+                      color: ColorsManager.textBaseColor,
                     ),
+                    onPressed: () {
+                      setState(() {
+                        currentMonth =
+                            DateTime(currentMonth.year, currentMonth.month + 1);
+                      });
+                    },
                   ),
                 ],
               ),
-              IconButton(
-                icon: const Icon(
-                  Icons.arrow_forward_ios,
-                  size: 20,
-                  color: ColorsManager.textBaseColor,
-                ),
-                onPressed: () {
-                  setState(() {
-                    currentMonth =
-                        DateTime(currentMonth.year, currentMonth.month + 1);
-                  });
-                },
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
         // Calendar Days
         SizedBox(
@@ -103,7 +125,7 @@ class CustomCalendarState extends State<CustomCalendar> {
                 .day, // Get the number of days in the current month
             itemBuilder: (context, index) {
               DateTime date =
-                  DateTime(currentMonth.year, currentMonth.month, index + 1);
+              DateTime(currentMonth.year, currentMonth.month, index + 1);
               bool isSelected = date.day == selectedDate.day &&
                   date.month == selectedDate.month &&
                   date.year == selectedDate.year;
@@ -118,7 +140,7 @@ class CustomCalendarState extends State<CustomCalendar> {
                   });
                 },
                 child: Container(
-                  width: 80,
+                  width: 50,
                   margin: const EdgeInsets.symmetric(
                     horizontal: 8.0,
                     vertical: 12.0,
@@ -134,7 +156,7 @@ class CustomCalendarState extends State<CustomCalendar> {
                         DateFormat.E().format(date),
                         style: TextStyles.styleSemiBold(
                           context,
-                          fontSize: 16.sp,
+                          fontSize: 14.sp,
                           color: isSelected ? Colors.white : Colors.black,
                         ),
                       ),
@@ -142,7 +164,7 @@ class CustomCalendarState extends State<CustomCalendar> {
                       // Show CircleAvatar only if it's today
                       if (isToday)
                         CircleAvatar(
-                            radius: 20,
+                            radius: 15,
                             backgroundColor: !isSelected
                                 ? Colors.transparent
                                 : ColorsManager.whiteColor,
@@ -150,17 +172,17 @@ class CustomCalendarState extends State<CustomCalendar> {
                               date.day.toString(),
                               style: TextStyles.styleSemiBold(
                                 context,
-                                fontSize: 16.sp,
+                                fontSize: 14.sp,
                                 color: ColorsManager.blackColor,
                               ),
                             ))
                       else
-                        // No circle for selected days, just white text
+                      // No circle for selected days, just white text
                         Text(
                           date.day.toString(),
                           style: TextStyles.styleSemiBold(
                             context,
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: isSelected ? Colors.white : Colors.black,
                           ),
                         ),
