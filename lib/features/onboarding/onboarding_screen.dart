@@ -5,7 +5,7 @@ import "package:smooth_page_indicator/smooth_page_indicator.dart";
 
 import '../../core/themes/colors_manager.dart';
 import '../../core/themes/text_styles.dart';
-import '../auth/ui/login_screen.dart';
+import '../auth/ui/auth_ui/login_screen.dart';
 import 'onboarding_view_body.dart';
 
 class OnBoardingScreen extends StatefulWidget {

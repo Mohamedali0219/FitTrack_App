@@ -47,6 +47,9 @@ dependencies:
   meta:
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
+  numberpicker: ^2.1.2
+  bottom_picker: ^2.8.0
+  flutter_picker: ^2.1.0
 
 dev_dependencies:
   flutter_test:
