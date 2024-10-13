@@ -2,7 +2,7 @@ import 'package:fit_track_app/core/helper/Extension/navigation_extension.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/widgets/custom_appbar.dart';
 import 'package:fit_track_app/core/widgets/custom_button.dart';
-import 'package:fit_track_app/features/ap_settings/ui/widget/switch_btn_widget/switch_btn_widget.dart';
+import 'package:fit_track_app/features/app_settings/ui/widget/switch_btn_widget/switch_btn_widget.dart';
 import 'package:fit_track_app/features/reminder/ui/widget/reminder_date_widget/reminder_date_widget.dart';
 import 'package:fit_track_app/features/reminder/ui/widget/reminder_time_widget/reminder_time_widget.dart';
 import 'package:flutter/material.dart';
