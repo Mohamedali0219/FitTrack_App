@@ -4,6 +4,7 @@ import 'package:fit_track_app/core/widgets/custom_button.dart';
 import 'package:fit_track_app/features/ap_settings/ui/widget/settings_app_items/settings_app_items.dart';
 import 'package:fit_track_app/features/ap_settings/ui/widget/switch_btn_widget/switch_btn_widget.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
+import 'package:fit_track_app/features/reminder/ui/reminder_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppSettingsScreen extends StatefulWidget {
@@ -31,10 +32,11 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
           height: MediaQuery.sizeOf(context).height,
           child:  Column(
             children: [
-              const SettingsAppItems(
+              SettingsAppItems(
+                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const ReminderScreen(),),);},
                 icon: Icons.notifications_none,
                 title: 'Reminder',
-                training: SizedBox(),
+                training: const SizedBox(),
               ),
               const SettingsAppItems(
                 icon: Icons.lock_open,

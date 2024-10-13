@@ -1,3 +1,4 @@
+import 'package:fit_track_app/core/helper/Extension/navigation_extension.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:fit_track_app/core/widgets/custom_appbar.dart';
@@ -13,7 +14,7 @@ class MealsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Meals PLans'),
+      appBar: CustomAppBar(title: 'Meals PLans', isback: true, onPressed: (){context.pop();},),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
