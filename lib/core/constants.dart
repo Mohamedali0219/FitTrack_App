@@ -6,22 +6,16 @@ class Constants {
 }
 
 class MenuItems {
-  static const dashboard = MenuItem('Dashboard', Icons.dashboard);
-  static const myProgress = MenuItem('My Progress', Icons.power);
-  static const training = MenuItem('Training', Icons.model_training);
-  static const categories = MenuItem('Categories', Icons.category_outlined);
-  static const notification = MenuItem('Notification', Icons.notifications_none_outlined);
+  static const home = MenuItem('Home', Icons.home);
   static const myFavorites = MenuItem('My Favorites', Icons.favorite_outline);
+  static const profile = MenuItem('Profile', Icons.person_2_outlined);
   static const appSettings = MenuItem('App Settings', Icons.settings);
   static const contactSupport = MenuItem('Contact Support', Icons.settings);
 
   static const all = <MenuItem>[
-    dashboard,
-    myProgress,
-    training,
-    categories,
-    notification,
+    home,
     myFavorites,
+    profile,
     appSettings,
     contactSupport,
   ];
