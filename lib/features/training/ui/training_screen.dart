@@ -1,6 +1,7 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/widgets/custom_appbar.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
+import 'package:fit_track_app/features/filter/ui/filter_screen.dart';
 import 'package:fit_track_app/features/home/ui/widget/popular_exercise_widget/popular_exercise_listview.dart';
 import 'package:fit_track_app/features/training/ui/widget/training_level_widget/training_level_listview.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class TrainingScreen extends StatelessWidget {
             builder: (context) => const HomeLayout(),
           ),
         ),
+        hasActionOnPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const FilterScreen(),),),
       ),
       body: ListView(
         scrollDirection: Axis.vertical,
