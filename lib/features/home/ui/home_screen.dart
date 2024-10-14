@@ -1,4 +1,5 @@
 import 'package:fit_track_app/features/category/ui/category_screen.dart';
+import 'package:fit_track_app/features/exercise/ui/full_exercise_screen.dart';
 import 'package:fit_track_app/features/home/ui/widget/additional_exercise_widget/additional_exercise_listview.dart';
 import 'package:fit_track_app/features/home/ui/widget/adv_part_widget/adv_part_widget.dart';
 import 'package:fit_track_app/features/home/ui/widget/category_type_widget/category_type_listview.dart';
@@ -74,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  HeaderPartWidget(onPressed: (){}, title: 'Additional Exercise', hasSeeAll: true,),
+                  HeaderPartWidget(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const FullExerciseScreen(),),);}, title: 'Additional Exercise', hasSeeAll: true,),
                   const AdditionalExerciseListview()
                 ],
               ),
