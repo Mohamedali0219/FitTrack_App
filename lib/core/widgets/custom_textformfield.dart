@@ -35,9 +35,6 @@ Widget defaultTextFormField({
         TextFormField(
           onTap: onTap,
           onEditingComplete: onEditingComplete,
-
- 
-
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
@@ -49,21 +46,23 @@ Widget defaultTextFormField({
             return null;
           },
           controller: controller,
-          keyboardType: TextInputType.visiblePassword,
+          keyboardType: TextInputType.text,
           obscureText: obscureText,
           onFieldSubmitted: (String value) {
             // print(value);
           },
           onChanged: onChange,
-          decoration:  InputDecoration(
+          decoration: InputDecoration(
             prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
             suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
             hintText: hintText,
-            contentPadding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),
             focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                   width: 2,
-                  color: ColorsManager.primaryColor), // Set the focused border color
+                  color: ColorsManager
+                      .primaryColor), // Set the focused border color
             ),
             border: const OutlineInputBorder(),
           ),

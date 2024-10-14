@@ -10,17 +10,19 @@ class FitTrackApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      child: MaterialApp(
-        title: 'Fit Track',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          scaffoldBackgroundColor: ColorsManager.whiteColor,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: ColorsManager.orangeColor,
+      child: SafeArea(
+        child: MaterialApp(
+          title: 'Fit Track',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            scaffoldBackgroundColor: ColorsManager.whiteColor,
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: ColorsManager.orangeColor,
+            ),
+            useMaterial3: true,
           ),
-          useMaterial3: true,
+          home: const SplashScreen(),
         ),
-        home: const SplashScreen(),
       ),
     );
   }
