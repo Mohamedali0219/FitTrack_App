@@ -9,6 +9,7 @@ Widget defaultButton({
   double width = double.infinity,
   double height = 50.5,
   Color background = ColorsManager.primaryColor,
+  Color broder = ColorsManager.primaryColor,
   Color textColor = Colors.white,
   double radius = 0.0,
   required Function() onPressed,
@@ -21,6 +22,7 @@ Widget defaultButton({
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(radius),
         color: background,
+        border: Border.all(color: broder),
       ),
       child: MaterialButton(
         onPressed: onPressed,

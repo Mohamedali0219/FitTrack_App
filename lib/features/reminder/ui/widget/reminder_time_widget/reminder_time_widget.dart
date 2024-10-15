@@ -40,7 +40,7 @@ class _ReminderTimeWidgetState extends State<ReminderTimeWidget> {
             final TimeOfDay? timeOfDay = await showTimePicker(
               context: context,
               initialTime: selectedTime,
-              initialEntryMode: TimePickerEntryMode.dial,
+              initialEntryMode: TimePickerEntryMode.input,
             );
             if(timeOfDay != null){
               setState(() {
