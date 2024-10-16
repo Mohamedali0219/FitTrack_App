@@ -9,7 +9,7 @@ class BuildAgeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int selectedAge = 27;
+    int selectedAge =27;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -25,7 +25,7 @@ class BuildAgeScreen extends StatelessWidget {
           CustomAgeSpinner(
             minValue: 10,
             maxValue: 100,
-            initialValue: 27,
+            initialValue: selectedAge,
             onChanged: (value) {
               selectedAge = value;
               
