@@ -37,7 +37,7 @@ class LoginScreen extends StatelessWidget {
                 defaultTextFormField(
                     keyboardType: TextInputType.emailAddress,
                     prefixIcon: Icons.email,
-                    suffixIcon: Icons.check,
+                    suffixIcon:const Icon (Icons.check),
                     hintText: "example@gmail.com",
                     controller: emailController,
                     label: "Email address",
@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(height: 16),
                 defaultTextFormField(
                     prefixIcon: Icons.lock,
-                    suffixIcon: Icons.visibility_outlined,
+                    suffixIcon:const Icon (Icons.visibility_outlined),
                     hintText: "********",
                     controller: passwordController,
                     label: "Password",

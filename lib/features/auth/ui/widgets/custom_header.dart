@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../../core/themes/colors_manager.dart';
+import '../../../../core/utils/app_icons.dart';
 
 class ScreenHeader extends StatelessWidget {
   final VoidCallback onSkip;
@@ -14,8 +18,17 @@ class ScreenHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-            onPressed: () => Navigator.of(context).pop(),
-            icon: const Icon(Icons.arrow_back)),
+          padding: const EdgeInsets.only(bottom: 16),
+          onPressed: () {
+            // Navigator.pop(context);
+          },
+          icon: SvgPicture.asset(
+            AppIcons.arrowBackIcon,
+            colorFilter: const ColorFilter.mode(
+                ColorsManager.textBaseColor, BlendMode.srcIn),
+            width: 15,
+          ),
+        ),
         TextButton(
             onPressed: onSkip,
             child: const Text(

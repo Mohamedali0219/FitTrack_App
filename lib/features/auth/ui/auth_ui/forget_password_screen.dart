@@ -35,7 +35,7 @@ class ForgetPassword extends StatelessWidget {
               radius: 8.0,
               keyboardType: TextInputType.emailAddress,
               prefixIcon: Icons.email,
-              suffixIcon: Icons.check,
+              suffixIcon: const Icon(Icons.check),
               hintText: 'example@gmail',
             ),
             const Spacer(),

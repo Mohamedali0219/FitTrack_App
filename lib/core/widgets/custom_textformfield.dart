@@ -11,7 +11,7 @@ Widget defaultTextFormField({
   final Function()? onEditingComplete,
   final Function()? onSaved,
   final IconData? prefixIcon,
-  final IconData? suffixIcon,
+  final Widget ? suffixIcon,
   final bool isPassword = false,
   final bool readOnly = false,
   final bool enabled = true,
@@ -54,7 +54,7 @@ Widget defaultTextFormField({
           onChanged: onChange,
           decoration: InputDecoration(
             prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-            suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+            suffixIcon: suffixIcon ,
             hintText: hintText,
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 5),

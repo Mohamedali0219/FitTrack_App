@@ -55,7 +55,7 @@ class SignUpScreen extends StatelessWidget {
                   const SizedBox(height: 5),
                   defaultTextFormField(
                     prefixIcon: Icons.email_outlined,
-                    suffixIcon: Icons.check,
+                    suffixIcon: const Icon (Icons.check),
                     keyboardType: TextInputType.emailAddress,
                     controller: emailController,
                     label: "Email",
@@ -67,7 +67,7 @@ class SignUpScreen extends StatelessWidget {
                     prefixIcon: Icons.lock,
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: true,
-                    suffixIcon: Icons.visibility_outlined,
+                    suffixIcon: const Icon(Icons.visibility_outlined),
                     controller: passwordController,
                     label: "Password",
                     hintText: "********",

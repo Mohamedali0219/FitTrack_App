@@ -1,3 +1,4 @@
+import 'package:fit_track_app/features/auth/ui/widgets/number_input_hight.dart';
 import 'package:flutter/material.dart';
 import '../widgets/custom_grid.dart';
 import '../widgets/custom_select_button.dart';
@@ -121,8 +122,8 @@ class BuildWeightScreen extends StatelessWidget {
           NumberInputWithUnit(
             title: "HOW MUCH DO YOU WEIGHT?",
             currentValue: "87", // Example value
-            unit1: "LBS",
-            unit2: "KG",
+            // unit1: "LBS",
+            // unit2: "KG",
             onValueChange: (value) {
               // Handle value change logic
             },
@@ -151,8 +152,6 @@ class BuildGoalWeightScreen extends StatelessWidget {
           NumberInputWithUnit(
             title: "WHAT'S YOUR GOAL WEIGHT?",
             currentValue: "60", // Example value
-            unit1: "LBS",
-            unit2: "KG",
             onValueChange: (value) {
               // Handle value change logic
             },
@@ -178,15 +177,11 @@ class BuildHeightScreen extends StatelessWidget {
           const Text(
             "Step 5 of 7",
           ),
-          NumberInputWithUnit(
-            title: "HOW MUCH DO YOU HEIGHT?",
-            currentValue: "85", // Example value
-            unit1: "FEET",
-            unit2: "CM",
-            onValueChange: (value) {
-              // Handle value change logic
-            },
-          ),
+          NumberInputWithUnit2(
+            currentValue: "175",
+            onValueChange: (value) {},
+            title: "WHAT'S YOUR HEIGHT?",
+          )
         ],
       ),
     );
@@ -269,9 +264,9 @@ class _BuildGoalScreenState extends State<BuildGoalScreen> {
       "Improve Fitness",
     ];
     final List<String> image = [
-     "assets/images/weight-loss.png",
-     "assets/images/Group 56253.png",
-     "assets/images/Path 875.png",
+      "assets/images/weight-loss.png",
+      "assets/images/Group 56253.png",
+      "assets/images/Path 875.png",
     ];
 
     return Padding(

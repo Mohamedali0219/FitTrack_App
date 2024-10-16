@@ -10,4 +10,5 @@ class AppIcons {
   static const String groupIcon = 'assets/icons/group.svg';
   static const String pathIcon = 'assets/icons/path.svg';
   static const String weightIcon = 'assets/icons/weight_lose.svg';
+  static const String editIcon = 'assets/icons/edit-btn.svg';
 }

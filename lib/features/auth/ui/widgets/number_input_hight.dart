@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'custom_toggle_buttons.dart'; // Import your custom widget
 
-class NumberInputWithUnit extends StatefulWidget {
+class NumberInputWithUnit2 extends StatefulWidget {
   final String title;
   final String currentValue;
   final Function(String) onValueChange;
 
-  const NumberInputWithUnit({
+  const NumberInputWithUnit2({
     required this.title,
     required this.currentValue,
     required this.onValueChange,
@@ -14,17 +14,17 @@ class NumberInputWithUnit extends StatefulWidget {
   });
 
   @override
-  _NumberInputWithUnitState createState() => _NumberInputWithUnitState();
+  _NumberInputWithUnit2State createState() => _NumberInputWithUnit2State();
 }
 
-class _NumberInputWithUnitState extends State<NumberInputWithUnit> {
+class _NumberInputWithUnit2State extends State<NumberInputWithUnit2> {
   late String selectedUnit;
   late TextEditingController controller;
 
   @override
   void initState() {
     super.initState();
-    selectedUnit = 'KG'; // Default selected unit
+    selectedUnit = 'cm'; // Default selected unit
     controller = TextEditingController(text: widget.currentValue);
   }
 
@@ -43,16 +43,16 @@ class _NumberInputWithUnitState extends State<NumberInputWithUnit> {
 
   void _convertValue() {
     if (controller.text.isNotEmpty) {
-      double weight = double.tryParse(controller.text) ?? 0.0;
+      double height = double.tryParse(controller.text) ?? 0.0;
 
-      if (selectedUnit == 'LBS') {
-        weight = (weight * 2.205); // Convert KG to LBS
+      if (selectedUnit == 'FEET') {
+        height = height * 30.48; // Convert FEET to CM
       } else {
-        weight = (weight / 2.205); // Convert LBS to KG
+        height = height / 30.48; // Convert CM to FEET
       }
 
       // Update the text field with the converted value
-      controller.text = weight.toStringAsFixed(0);
+      controller.text = height.toStringAsFixed(0);
     }
   }
 
@@ -67,8 +67,8 @@ class _NumberInputWithUnitState extends State<NumberInputWithUnit> {
         ),
         const SizedBox(height: 10),
         CustomToggleButtons(
-          unit1: 'KG',
-          unit2: 'LBS',
+          unit1: 'cm',
+          unit2: 'feet',
           onUnitChanged: _onUnitChanged, // Pass the callback
         ),
         const SizedBox(height: 40),
