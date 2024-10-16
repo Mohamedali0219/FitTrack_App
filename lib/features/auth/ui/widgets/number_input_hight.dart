@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
-import 'custom_toggle_buttons.dart'; // Import your custom widget
 
-class NumberInputWithUnit2 extends StatefulWidget {
-  final String title;
-  final String currentValue;
+import 'custom_toggle_buttons.dart';
+
+class NumberInputHight extends StatefulWidget {
+  const NumberInputHight({super.key, required this.currentValue, required this.title, required this.onValueChange});
+
+  final String title ;
   final Function(String) onValueChange;
+  final String currentValue;
 
-  const NumberInputWithUnit2({
-    required this.title,
-    required this.currentValue,
-    required this.onValueChange,
-    super.key,
-  });
 
   @override
-  _NumberInputWithUnit2State createState() => _NumberInputWithUnit2State();
+  State<NumberInputHight> createState() => _NumberInputHightState();
 }
 
-class _NumberInputWithUnit2State extends State<NumberInputWithUnit2> {
-  late String selectedUnit;
+class _NumberInputHightState extends State<NumberInputHight> {
+ late String selectedUnit;
   late TextEditingController controller;
 
   @override

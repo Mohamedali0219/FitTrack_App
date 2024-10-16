@@ -177,11 +177,13 @@ class BuildHeightScreen extends StatelessWidget {
           const Text(
             "Step 5 of 7",
           ),
-          NumberInputWithUnit2(
-            currentValue: "175",
-            onValueChange: (value) {},
-            title: "WHAT'S YOUR HEIGHT?",
-          )
+          NumberInputHight(
+            title: "HOW MUCH DO YOU HEIGHT?",
+            currentValue: "180", // Example value
+            onValueChange: (value) {
+              // Handle value change logic
+            },
+          ),
         ],
       ),
     );
