@@ -27,7 +27,7 @@ class EditProfileScreen extends StatelessWidget {
         leading: IconButton(
           padding: const EdgeInsets.only(bottom: 16),
           onPressed: () {
-            // Navigator.pop(context);
+            Navigator.pop(context);
           },
           icon: SvgPicture.asset(
             AppIcons.arrowBackIcon,

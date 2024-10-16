@@ -1,3 +1,4 @@
+import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:fit_track_app/features/profile/widgets/goal_type_widget/goal_type_listview.dart';
 import 'package:fit_track_app/features/profile/widgets/info_row/info_row.dart';
 import 'package:fit_track_app/features/profile/widgets/macronutrient_goals/macronutrient_Goals.dart';
@@ -20,7 +21,11 @@ class ProfileScreen extends StatelessWidget {
         leading: IconButton(
           padding: const EdgeInsets.only(bottom: 16),
           onPressed: () {
-            // Navigator.pop(context);
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => const HomeLayout(),
+              ),
+            );
           },
           icon: SvgPicture.asset(
             AppIcons.arrowBackIcon,
