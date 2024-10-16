@@ -2,7 +2,7 @@ import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/custom_otp.dart';
+import 'custom_otp.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key});

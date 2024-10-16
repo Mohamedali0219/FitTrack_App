@@ -1,11 +1,11 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
-import 'package:fit_track_app/core/widgets/custom_textformfield.dart';
-import 'package:fit_track_app/features/auth/ui/auth_ui/forget_password_screen.dart';
+import 'package:fit_track_app/features/auth/ui/widgets/custom_textformfield.dart';
+import 'package:fit_track_app/features/auth/ui/auth_ui/forget_password/forget_password_screen.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_button.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_signin_with_google.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:flutter/material.dart';
-import 'sign_up_screen.dart';
+import '../sign_up/sign_up_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

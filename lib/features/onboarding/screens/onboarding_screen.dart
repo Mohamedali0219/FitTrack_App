@@ -1,12 +1,12 @@
-import 'package:fit_track_app/features/onboarding/onboarding_model.dart';
+import 'package:fit_track_app/features/onboarding/data/model/onboarding_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import "package:smooth_page_indicator/smooth_page_indicator.dart";
 
-import '../../core/themes/colors_manager.dart';
-import '../../core/themes/text_styles.dart';
-import '../auth/ui/auth_ui/login_screen.dart';
-import 'onboarding_view_body.dart';
+import '../../../core/themes/colors_manager.dart';
+import '../../../core/themes/text_styles.dart';
+import '../../auth/ui/auth_ui/login/login_screen.dart';
+import '../widget/onboarding_view_body.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

@@ -1,5 +1,5 @@
-import 'package:fit_track_app/core/widgets/custom_textformfield.dart';
-import 'package:fit_track_app/features/auth/ui/auth_ui/reset_code_screen.dart';
+import 'package:fit_track_app/features/auth/ui/widgets/custom_textformfield.dart';
+import 'package:fit_track_app/features/auth/ui/auth_ui/reset_code/reset_code_screen.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 

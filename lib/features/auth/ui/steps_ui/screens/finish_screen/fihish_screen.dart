@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/themes/colors_manager.dart';
-import '../../../core/themes/text_styles.dart';
-import '../../../core/widgets/custom_button.dart';
+import '../../../../../../core/themes/colors_manager.dart';
+import '../../../../../../core/themes/text_styles.dart';
+import '../../../../../../core/widgets/custom_button.dart';
 
 class FinishScreen extends StatelessWidget {
   const FinishScreen({super.key});

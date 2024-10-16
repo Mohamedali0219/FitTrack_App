@@ -1,12 +1,12 @@
 import 'package:fit_track_app/core/widgets/custom_button.dart';
-import 'package:fit_track_app/features/auth/ui/widgets/custom_toggle_buttons.dart';
+import 'package:fit_track_app/features/auth/ui/steps_ui/screens/weight_screen/custom_toggle_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/themes/colors_manager.dart';
 import '../../core/themes/text_styles.dart';
 import '../../core/utils/app_icons.dart';
-import '../../core/widgets/custom_textformfield.dart';
+import '../auth/ui/widgets/custom_textformfield.dart';
 
 class EditProfileScreen extends StatelessWidget {
   const EditProfileScreen({super.key});

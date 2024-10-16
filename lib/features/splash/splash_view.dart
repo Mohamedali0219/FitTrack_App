@@ -1,4 +1,4 @@
-import 'package:fit_track_app/features/onboarding/home_view.dart';
+import 'package:fit_track_app/features/onboarding/screens/home_view.dart';
 import 'package:flutter/material.dart';
 
 

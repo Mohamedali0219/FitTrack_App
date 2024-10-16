@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/themes/colors_manager.dart';
+import '../../../../../core/themes/colors_manager.dart';
 
 class OTPInput extends StatelessWidget {
   final TextEditingController controller;

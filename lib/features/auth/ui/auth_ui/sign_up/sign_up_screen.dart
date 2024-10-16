@@ -1,10 +1,10 @@
-import 'package:fit_track_app/core/widgets/custom_textformfield.dart';
+import 'package:fit_track_app/features/auth/ui/widgets/custom_textformfield.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/themes/colors_manager.dart';
-import '../steps_ui/steps_screens.dart';
-import 'login_screen.dart';
-import '../widgets/custom_signin_with_google.dart';
+import '../../../../../core/themes/colors_manager.dart';
+import '../../steps_ui/steps_screens.dart';
+import '../login/login_screen.dart';
+import '../../widgets/custom_signin_with_google.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});

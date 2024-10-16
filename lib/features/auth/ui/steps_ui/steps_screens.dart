@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
-import '../fihish_screen.dart';
+import 'screens/finish_screen/fihish_screen.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_header.dart';
-import 'steps_widgets.dart';
+import 'screens/age_screen/age_screen.dart';
+import 'screens/favorite_screen/favorite_screen.dart';
+import 'screens/fitness_level_screen/fitness_level_screen.dart';
+import 'screens/goal_screen/goal_screen.dart';
+import 'screens/height_screen/height_screen.dart';
+import 'screens/weight_goal_screen/weight_goal_screen.dart';
+import 'screens/weight_screen/weight_screen.dart';
+
 
 class OnboardingScreens extends StatefulWidget {
   const OnboardingScreens({super.key});

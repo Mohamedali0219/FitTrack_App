@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../../core/themes/colors_manager.dart';
-import '../../../../core/themes/text_styles.dart';
+import '../../../../../../core/themes/colors_manager.dart';
+import '../../../../../../core/themes/text_styles.dart';
 
 class CustomSelectionButton extends StatelessWidget {
   const CustomSelectionButton(
