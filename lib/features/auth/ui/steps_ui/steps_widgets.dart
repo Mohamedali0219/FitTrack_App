@@ -95,6 +95,7 @@ class BuildAgeScreen extends StatelessWidget {
             initialValue: 27,
             onChanged: (value) {
               selectedAge = value;
+              
             },
           ),
           const Spacer(),
