@@ -14,7 +14,7 @@ class TrainingTimeScreen extends StatefulWidget {
 
 class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
   late Timer _timer;
-  int _start = 1800; // 60 minutes in seconds (60 * 60)
+  int _start = 1200; // 60 minutes in seconds (60 * 60)
   bool isRunning = false;
 
   void startTimer() {
@@ -125,7 +125,7 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
                           height: 80,
                           width: 80,
                           child: CircularProgressIndicator(
-                            value: seconds / minutes,
+                            value: minutes / seconds,
                             valueColor: const AlwaysStoppedAnimation(ColorsManager.blackColor),
                             strokeWidth: 8,
                             backgroundColor: Colors.grey[300],

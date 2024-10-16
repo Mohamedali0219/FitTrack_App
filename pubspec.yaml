@@ -45,6 +45,7 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   country_code_picker: ^3.0.0
   meta:
+  rflutter_alert:
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
   numberpicker: ^2.1.2
