@@ -1,11 +1,30 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
+import 'package:fit_track_app/features/home/ui/home_screen.dart';
 import 'package:fit_track_app/features/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class FitTrackApp extends StatelessWidget {
+class FitTrackApp extends StatefulWidget {
   const FitTrackApp({super.key});
 
+  @override
+  State<FitTrackApp> createState() => _FitTrackAppState();
+}
+
+@override
+void initState() {
+  FirebaseAuth.instance.authStateChanges().listen((User? user) {
+    if (user == null) {
+      print('User is currently signed out!');
+    } else {
+      print('User is signed in!');
+    }
+  });
+}
+
+class _FitTrackAppState extends State<FitTrackApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -21,7 +40,12 @@ class FitTrackApp extends StatelessWidget {
             ),
             useMaterial3: true,
           ),
-          home: const SplashScreen(),
+          home:
+               FirebaseAuth.instance.currentUser != null &&
+                      FirebaseAuth.instance.currentUser!.emailVerified
+                  ? const HomeScreen()
+                  :
+              const SplashScreen(),
         ),
       ),
     );

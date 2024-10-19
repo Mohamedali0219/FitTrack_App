@@ -25,7 +25,11 @@ class HomeAppBarWidget extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
-                  ZoomDrawer.of(context)!.toggle();
+                  if (ZoomDrawer.of(context) != null) {
+                    ZoomDrawer.of(context)!.toggle();
+                  } else {
+                    print("ZoomDrawer is not found in the widget tree.");
+                  }
                 },
                 icon: setPhoto(
                   kind: 1,
@@ -37,8 +41,7 @@ class HomeAppBarWidget extends StatelessWidget {
                 height: 44,
                 decoration: const ShapeDecoration(
                   image: DecorationImage(
-                    image:
-                    NetworkImage("https://via.placeholder.com/44x44"),
+                    image: NetworkImage("https://via.placeholder.com/44x44"),
                     fit: BoxFit.fill,
                   ),
                   shape: OvalBorder(),
@@ -102,8 +105,7 @@ class HomeAppBarWidget extends StatelessWidget {
                 width: 10,
                 height: 10,
               ),
-              contentPadding:
-              const EdgeInsets.symmetric(horizontal: 16.0),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
               enabledBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
                   color: Colors.white,

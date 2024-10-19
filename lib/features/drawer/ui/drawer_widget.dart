@@ -1,13 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/core/constants.dart';
+import 'package:fit_track_app/features/auth/ui/auth_ui/login/login_screen.dart';
 import 'package:fit_track_app/features/drawer/data/menu_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class DrawerWidget extends StatelessWidget {
   final MenuItem currentItem;
   final ValueChanged<MenuItem> onSelectedItem;
 
-  const DrawerWidget({super.key, required this.currentItem, required this.onSelectedItem});
+  const DrawerWidget(
+      {super.key, required this.currentItem, required this.onSelectedItem});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class DrawerWidget extends StatelessWidget {
                 Align(
                   alignment: Alignment.topLeft,
                   child: IconButton(
-                    onPressed: (){
+                    onPressed: () {
                       ZoomDrawer.of(context)!.close();
                     },
                     icon: const Icon(
@@ -32,7 +36,9 @@ class DrawerWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +49,9 @@ class DrawerWidget extends StatelessWidget {
                       height: 104,
                       decoration: const ShapeDecoration(
                         image: DecorationImage(
-                          image: NetworkImage("https://via.placeholder.com/104x104",),
+                          image: NetworkImage(
+                            "https://via.placeholder.com/104x104",
+                          ),
                           fit: BoxFit.fill,
                         ),
                         shape: OvalBorder(),
@@ -51,7 +59,9 @@ class DrawerWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 7,),
+                const SizedBox(
+                  height: 7,
+                ),
                 const Text(
                   'Youssef !',
                   style: TextStyle(
@@ -63,7 +73,9 @@ class DrawerWidget extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
-                const SizedBox(height: 8,),
+                const SizedBox(
+                  height: 8,
+                ),
                 const Text(
                   'Basic member',
                   style: TextStyle(
@@ -73,14 +85,26 @@ class DrawerWidget extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                const SizedBox(height: 41,),
+                const SizedBox(
+                  height: 41,
+                ),
                 ...MenuItems.all.map(buildDrawerItem),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 ListTile(
                   minLeadingWidth: 20,
                   leading: const Icon(Icons.logout),
                   title: const Text('Sign Out'),
-                  onTap: () {
+                  onTap: () async {
+                    await FirebaseAuth.instance.signOut();
+                    GoogleSignIn googleSignIn = GoogleSignIn();
+                     googleSignIn.disconnect();
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
                   },
                 ),
               ],
@@ -100,7 +124,7 @@ class DrawerWidget extends StatelessWidget {
         minLeadingWidth: 20,
         leading: Icon(item.icon),
         title: Text(item.title),
-        onTap: ()=> onSelectedItem(item),
+        onTap: () => onSelectedItem(item),
       ),
     );
   }

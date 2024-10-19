@@ -38,7 +38,7 @@ class HomeViewBody extends StatelessWidget {
           const Spacer(),
           MaterialButton(
             onPressed: () {
-              Navigator.of(context).push(
+              Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
                   builder: (context) => const OnBoardingScreen(),
                 ),

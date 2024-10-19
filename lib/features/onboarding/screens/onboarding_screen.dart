@@ -67,7 +67,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 children: [
                   TextButton(
                     onPressed: () {
-                       Navigator.of(context).push(
+                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),
                         ),
@@ -99,7 +99,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   TextButton(
                     onPressed: () {
                       if (boardingController.page == boarding.length - 1) {
-                         Navigator.of(context).push(
+                         Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),
                         ),
