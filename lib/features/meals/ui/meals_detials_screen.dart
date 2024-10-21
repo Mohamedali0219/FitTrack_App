@@ -1,5 +1,6 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
+import 'package:fit_track_app/features/meals/data/model/meal.dart';
 import 'package:fit_track_app/features/meals/ui/widgets/kcal_clock.dart';
 import 'package:fit_track_app/features/meals/ui/widgets/meal_detials_widget/meal_description_info.dart';
 import 'package:fit_track_app/features/meals/ui/widgets/meal_detials_widget/meal_detials_appbar.dart';
@@ -9,10 +10,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MealsDetialsScreen extends StatelessWidget {
-  const MealsDetialsScreen({super.key});
+  const MealsDetialsScreen({super.key, required this.mealModel});
+
+  final MealModel mealModel;
 
   @override
   Widget build(BuildContext context) {
+    print(mealModel.name);
     return Scaffold(
       backgroundColor: ColorsManager.whiteColor,
       body: CustomScrollView(

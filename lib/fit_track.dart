@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
+import 'package:fit_track_app/features/meals/logic/cubit/get_meals_cubit.dart';
+import 'package:fit_track_app/features/meals/ui/meals_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'features/splash/splash_view.dart';
 
 class FitTrackApp extends StatefulWidget {
   const FitTrackApp({super.key});
@@ -25,20 +27,25 @@ void initState() {
 class _FitTrackAppState extends State<FitTrackApp> {
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      child: SafeArea(
-        child: MaterialApp(
-          title: 'Fit Track',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            scaffoldBackgroundColor: ColorsManager.whiteColor,
-            colorScheme: ColorScheme.fromSeed(
-              seedColor: ColorsManager.orangeColor,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<GetMealsCubit>(create: (context) => GetMealsCubit()),
+      ],
+      child: ScreenUtilInit(
+        designSize: const Size(375, 812),
+        child: SafeArea(
+          child: MaterialApp(
+            title: 'Fit Track',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              scaffoldBackgroundColor: ColorsManager.whiteColor,
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: ColorsManager.orangeColor,
+              ),
+              useMaterial3: true,
             ),
-            useMaterial3: true,
+            home: const MealsScreen(),
           ),
-          home: const SplashScreen(),
         ),
       ),
     );

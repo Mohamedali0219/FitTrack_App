@@ -1,19 +1,20 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:fit_track_app/core/utils/app_image.dart';
+import 'package:fit_track_app/features/meals/data/model/meal.dart';
 import 'package:fit_track_app/features/meals/ui/widgets/kcal_clock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.mealName});
+  const MealItem({super.key, required this.mealModel});
 
-  final String mealName;
+  final MealModel mealModel;
 
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: mealName, //! i will change this to mealName
+      tag: mealModel.id, //! i will change this to mealName
       child: Card(
         color: ColorsManager.whiteColor,
         child: Column(
@@ -38,7 +39,7 @@ class MealItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          mealName,
+                          mealModel.name,
                           style: TextStyles.styleBold(
                             context,
                             fontSize: 24,
@@ -73,7 +74,7 @@ class MealItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Oatmeal with Fruits',
+                          mealModel.description,
                           style: TextStyles.styleBold(
                             context,
                             fontSize: 24,

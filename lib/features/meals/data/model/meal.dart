@@ -1,70 +1,66 @@
-class Meal {
-  String id;
-  String name;
-  String description;
-  int calories;
-  int preparationTime;
-  String date;
-  String mealType;
-  String imageUrl;
-  Nutrition nutrition;
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+class MealModel {
+  final String id;
+  final String name;
+  final String description;
+  final String mealType;
+  final double calories;
 
-  Meal({
+  MealModel({
     required this.id,
     required this.name,
     required this.description,
-    required this.calories,
-    required this.preparationTime,
-    required this.date,
     required this.mealType,
-    required this.imageUrl,
-    required this.nutrition,
+    required this.calories,
   });
 
-  // Factory method to create a Meal object from Firebase data
-  factory Meal.fromFirestore(Map<String, dynamic> data, String id) {
-    return Meal(
+  factory MealModel.fromFirestore(Map<String, dynamic> data, String id) {
+    return MealModel(
       id: id,
-      name: data['name'],
-      description: data['description'],
-      calories: data['calories'],
-      preparationTime: data['preparationTime'],
-      date: data['date'],
-      mealType: data['mealType'],
-      imageUrl: data['imageUrl'],
-      nutrition: Nutrition.fromMap(data['nutrition']),
+      name: data['name'] as String,
+      description: data['description'] as String,
+      mealType: data['mealType'] as String,
+      calories: (data['calories'] is int)
+          ? (data['calories'] as int).toDouble()
+          : data['calories'] as double,
     );
   }
 
-  // Method to convert a Meal object into a map to send to Firestore
-  Map<String, dynamic> toFirestore() {
-    return {
-      'name': name,
-      'description': description,
-      'calories': calories,
-      'preparationTime': preparationTime,
-      'date': date,
-      'mealType': mealType,
-      'imageUrl': imageUrl,
-      'nutrition': nutrition.toMap(),
-    };
+  @override
+  bool operator ==(covariant MealModel other) {
+    if (identical(this, other)) return true;
+
+    return other.id == id &&
+        other.name == name &&
+        other.description == description &&
+        other.mealType == mealType &&
+        other.calories == calories;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+        name.hashCode ^
+        description.hashCode ^
+        mealType.hashCode ^
+        calories.hashCode;
   }
 }
 
-class Nutrition {
+class NutritionModel {
   double fat;
   double protein;
   double carbs;
 
-  Nutrition({
+  NutritionModel({
     required this.fat,
     required this.protein,
     required this.carbs,
   });
 
   // Factory method to create Nutrition object from Firestore data
-  factory Nutrition.fromMap(Map<String, dynamic> data) {
-    return Nutrition(
+  factory NutritionModel.fromMap(Map<String, dynamic> data) {
+    return NutritionModel(
       fat: data['fat'],
       protein: data['protein'],
       carbs: data['carbs'],
@@ -79,4 +75,14 @@ class Nutrition {
       'carbs': carbs,
     };
   }
+
+  @override
+  bool operator ==(covariant NutritionModel other) {
+    if (identical(this, other)) return true;
+
+    return other.fat == fat && other.protein == protein && other.carbs == carbs;
+  }
+
+  @override
+  int get hashCode => fat.hashCode ^ protein.hashCode ^ carbs.hashCode;
 }

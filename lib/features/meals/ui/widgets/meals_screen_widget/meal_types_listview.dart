@@ -1,5 +1,7 @@
+import 'package:fit_track_app/features/meals/logic/cubit/get_meals_cubit.dart';
 import 'package:fit_track_app/features/meals/ui/widgets/meals_screen_widget/meal_types_item.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MealTypesListView extends StatefulWidget {
   const MealTypesListView({
@@ -19,7 +21,7 @@ class MealTypesListViewState extends State<MealTypesListView> {
       'Breakfast',
       'Lunch',
       'Dinner',
-      'Snacks',
+      //   'Snacks',
     ];
     return SizedBox(
       height: 60, // Adjust height as needed
@@ -31,6 +33,13 @@ class MealTypesListViewState extends State<MealTypesListView> {
             onTap: () {
               setState(() {
                 selectedIndex = index;
+                if (index == 0) {
+                  context.read<GetMealsCubit>().getMealsBreakFast();
+                } else if (index == 1) {
+                  context.read<GetMealsCubit>().getMealslunch();
+                } else if (index == 2) {
+                  context.read<GetMealsCubit>().getMealsDinner();
+                }
               });
             },
             child: MealTypesItems(
