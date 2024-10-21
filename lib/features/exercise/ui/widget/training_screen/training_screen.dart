@@ -8,7 +8,9 @@ import 'package:fit_track_app/features/home/ui/widget/additional_exercise_widget
 import 'package:flutter/material.dart';
 
 class TrainingDetailsScreen extends StatefulWidget {
-  const TrainingDetailsScreen({super.key});
+  const TrainingDetailsScreen({super.key, required this.exercise});
+
+  final Map<String, dynamic> exercise;
 
   @override
   State<TrainingDetailsScreen> createState() => _TrainingDetailsScreenState();

@@ -7,7 +7,6 @@ class TrainingLevelItems extends StatelessWidget {
       {super.key, this.isSelected = false, required this.levelType});
 
   final bool isSelected;
-
   final String levelType;
 
   @override

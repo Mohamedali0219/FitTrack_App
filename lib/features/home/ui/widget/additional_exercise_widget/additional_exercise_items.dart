@@ -3,7 +3,9 @@ import 'package:fit_track_app/features/exercise/ui/widget/training_screen/traini
 import 'package:flutter/material.dart';
 
 class AdditionalExerciseItems extends StatelessWidget {
-  const AdditionalExerciseItems({super.key});
+  const AdditionalExerciseItems({super.key, required this.exercise});
+
+  final Map<String, dynamic> exercise;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class AdditionalExerciseItems extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const TrainingDetailsScreen(),
+            builder: (context) => TrainingDetailsScreen(exercise: exercise,),
           ),
         );
       },
@@ -23,9 +25,9 @@ class AdditionalExerciseItems extends StatelessWidget {
           Container(
             width: 90,
             height: 90,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage("https://via.placeholder.com/90x90"),
+                image: NetworkImage(exercise['imageUrl']),
                 fit: BoxFit.fill,
               ),
             ),
@@ -35,9 +37,9 @@ class AdditionalExerciseItems extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Exercises with Jumping Rope',
-                style: TextStyle(
+              Text(
+                exercise['name'],
+                style: const TextStyle(
                   color: ColorsManager.textBaseColor,
                   fontSize: 12,
                   fontFamily: 'Montserrat',
@@ -57,9 +59,9 @@ class AdditionalExerciseItems extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  const Text(
-                    '100 kcal',
-                    style: TextStyle(
+                  Text(
+                    exercise['kcal'],
+                    style: const TextStyle(
                       color: ColorsManager.textSecondaryColor,
                       fontSize: 10,
                       fontFamily: 'Montserrat',
@@ -85,9 +87,9 @@ class AdditionalExerciseItems extends StatelessWidget {
                   const SizedBox(
                     width: 6,
                   ),
-                  const Text(
-                    '10 min',
-                    style: TextStyle(
+                  Text(
+                    '${exercise['time']} min',
+                    style: const TextStyle(
                       color: ColorsManager.textSecondaryColor,
                       fontSize: 10,
                       fontFamily: 'Montserrat',
@@ -99,9 +101,9 @@ class AdditionalExerciseItems extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                'Beginner',
-                style: TextStyle(
+              Text(
+                exercise['description'],
+                style: const TextStyle(
                   color: Color(0xFF303841),
                   fontSize: 10,
                   fontFamily: 'Montserrat',
