@@ -1,4 +1,7 @@
+import 'package:fit_track_app/core/utils/app_icons.dart';
+import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../../../../core/themes/colors_manager.dart';
 import '../../../../../../core/themes/text_styles.dart';
@@ -11,6 +14,16 @@ class FinishScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            padding: const EdgeInsets.only(bottom: 16),
+            onPressed: () {},
+            icon: SvgPicture.asset(
+              AppIcons.arrowBackIcon,
+              colorFilter: const ColorFilter.mode(
+                  ColorsManager.textBaseColor, BlendMode.srcIn),
+              width: 10,
+            ),
+          ),
           backgroundColor: Colors.transparent,
         ),
         body: Padding(
@@ -47,7 +60,14 @@ class FinishScreen extends StatelessWidget {
               const Spacer(),
               defaultButton(
                   text: "GET STARTED!",
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeLayout(),
+                      ),
+                    );
+                  },
                   fontSize: 18,
                   radius: 8.0),
               const SizedBox(height: 5),

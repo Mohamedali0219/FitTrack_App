@@ -1,15 +1,22 @@
-
 // Page 2: Age Selection Screen
 import 'package:flutter/material.dart';
 
+import '../../../../data/model/user.dart';
+import '../../../widgets/custom_button.dart';
 import 'custom_spinner.dart';
 
-class BuildAgeScreen extends StatelessWidget {
-  const BuildAgeScreen({super.key});
+class BuildAgeScreen extends StatefulWidget {
+  final VoidCallback onSubmit; 
+  const BuildAgeScreen({super.key, required this.onSubmit});
 
   @override
+  State<BuildAgeScreen> createState() => _BuildAgeScreenState();
+}
+
+class _BuildAgeScreenState extends State<BuildAgeScreen> {
+  int selectedAge = 20;
+  @override
   Widget build(BuildContext context) {
-    int selectedAge =27;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -26,12 +33,16 @@ class BuildAgeScreen extends StatelessWidget {
             minValue: 10,
             maxValue: 100,
             initialValue: selectedAge,
-            onChanged: (value) {
-              selectedAge = value;
-              
-            },
+            onChanged: (value) => setState(() => selectedAge = value),
           ),
           const Spacer(),
+          customButton(
+              text: 'Next Step',
+              onPressed: () {
+                UserModel.instance.setAge = selectedAge;
+                widget.onSubmit();
+              }),
+          const SizedBox(height: 20),
         ],
       ),
     );

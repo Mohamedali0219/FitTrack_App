@@ -1,5 +1,8 @@
+import 'package:fit_track_app/features/auth/ui/auth_ui/login/login_screen.dart';
+import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:flutter/material.dart';
 
+import '../../../shared_preferences.dart';
 import 'onboarding_screen.dart';
 
 class HomeView extends StatelessWidget {
@@ -40,7 +43,14 @@ class HomeViewBody extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (context) => const OnBoardingScreen(),
+                  builder: (context) =>
+                      SharedPreference().getBool(key: "onBoarding") == true
+                          ? SharedPreference().getString(key: "user") == '' ||
+                                  SharedPreference().getString(key: "user") ==
+                                      null
+                              ? const LoginScreen()
+                              : const HomeLayout()
+                          : const OnBoardingScreen(),
                 ),
               );
             },

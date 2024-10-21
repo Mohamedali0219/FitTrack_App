@@ -1,10 +1,15 @@
 // Page 7: Goal Screen
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fit_track_app/shared_preferences.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../../../data/model/user.dart';
+import '../../../widgets/custom_button.dart';
 import '../fitness_level_screen/custom_select_button.dart';
 
 class BuildGoalScreen extends StatefulWidget {
-  const BuildGoalScreen({super.key});
+  final VoidCallback onSubmit;
+  const BuildGoalScreen({super.key, required this.onSubmit});
 
   @override
   State<BuildGoalScreen> createState() => _BuildGoalScreenState();
@@ -57,6 +62,21 @@ class _BuildGoalScreenState extends State<BuildGoalScreen> {
               },
             ),
           ),
+          customButton(
+              text: 'Finish Steps',
+              onPressed: () {
+                UserModel.instance.goal = goalTypes[selectedIndex];
+                FirebaseFirestore.instance
+                    .collection('users')
+                    .doc(UserModel.instance.uid)
+                    .update(UserModel.instance.toMapAdditionalData())
+                    .then((value) => {
+                          SharedPreference().setString(
+                              key: "user", value: UserModel.instance.getUID!)
+                        });
+                widget.onSubmit();
+              }),
+          const SizedBox(height: 20),
         ],
       ),
     );

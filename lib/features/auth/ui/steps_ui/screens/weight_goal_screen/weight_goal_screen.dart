@@ -1,11 +1,20 @@
 // Page 4: Goal Weight Screen
+import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:flutter/material.dart';
 
+import '../../../widgets/custom_button.dart';
 import '../weight_screen/number_input.dart';
 
-class BuildGoalWeightScreen extends StatelessWidget {
-  const BuildGoalWeightScreen({super.key});
+class BuildGoalWeightScreen extends StatefulWidget {
+  final VoidCallback onSubmit; 
+  const BuildGoalWeightScreen({super.key, required this.onSubmit});
 
+  @override
+  State<BuildGoalWeightScreen> createState() => _BuildGoalWeightScreenState();
+}
+
+class _BuildGoalWeightScreenState extends State<BuildGoalWeightScreen> {
+  String currentValue = '60';
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,11 +28,21 @@ class BuildGoalWeightScreen extends StatelessWidget {
           ),
           NumberInputWithUnit(
             title: "WHAT'S YOUR GOAL WEIGHT?",
-            currentValue: "60", // Example value
+            currentValue: currentValue , // Example value
             onValueChange: (value) {
-              // Handle value change logic
+           setState(() {
+             currentValue = value;
+           });
             },
           ),
+          const Spacer(),
+          customButton(
+                text: 'Next Step',
+                onPressed: () {
+                  UserModel.instance.setGoalWeight = currentValue;
+                  widget.onSubmit();
+                }),
+            const SizedBox(height: 20),
         ],
       ),
     );

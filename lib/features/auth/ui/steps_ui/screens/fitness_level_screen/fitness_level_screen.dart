@@ -1,10 +1,14 @@
 // Page 6: Fitness Level Screen
+
+import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:flutter/material.dart';
 
+import '../../../widgets/custom_button.dart';
 import 'custom_select_button.dart';
 
 class BuildFitnessLevelScreen extends StatefulWidget {
-  const BuildFitnessLevelScreen({super.key});
+  final VoidCallback onSubmit; 
+  const BuildFitnessLevelScreen({super.key, required this.onSubmit});
 
   @override
   State<BuildFitnessLevelScreen> createState() =>
@@ -13,6 +17,7 @@ class BuildFitnessLevelScreen extends StatefulWidget {
 
 class _BuildFitnessLevelScreenState extends State<BuildFitnessLevelScreen> {
   int selectedIndex = 0;
+  
   @override
   Widget build(BuildContext context) {
     final List<String> goalTypes = [
@@ -43,6 +48,7 @@ class _BuildFitnessLevelScreenState extends State<BuildFitnessLevelScreen> {
                     onTap: () {
                       setState(() {
                         selectedIndex = index;
+                        // selectedGoalType = goalTypes[index];
                       });
                     },
                     child: CustomSelectionButton(
@@ -54,6 +60,14 @@ class _BuildFitnessLevelScreenState extends State<BuildFitnessLevelScreen> {
               ),
             ),
           ),
+          customButton(
+              text: 'Next Step',
+              onPressed: () {
+               
+                UserModel.instance.fitnessLevel = goalTypes[selectedIndex];
+                widget.onSubmit();
+              }),
+          const SizedBox(height: 20),
         ],
       ),
     );

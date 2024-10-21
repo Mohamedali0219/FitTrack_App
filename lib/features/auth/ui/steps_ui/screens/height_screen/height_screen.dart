@@ -1,12 +1,21 @@
 
 // Page 5: Height Screen
+import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:flutter/material.dart';
 
+import '../../../widgets/custom_button.dart';
 import 'number_input_hight.dart';
 
-class BuildHeightScreen extends StatelessWidget {
-  const BuildHeightScreen({super.key});
+class BuildHeightScreen extends StatefulWidget {
+  final VoidCallback onSubmit; 
+  const BuildHeightScreen({super.key, required this.onSubmit});
 
+  @override
+  State<BuildHeightScreen> createState() => _BuildHeightScreenState();
+}
+
+class _BuildHeightScreenState extends State<BuildHeightScreen> {
+  String currentValue = '190'; 
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,11 +29,21 @@ class BuildHeightScreen extends StatelessWidget {
           ),
           NumberInputHight(
             title: "HOW MUCH DO YOU HEIGHT?",
-            currentValue: "180", // Example value
+            currentValue: currentValue, // Example value
             onValueChange: (value) {
-              // Handle value change logic
+            setState(() {
+               currentValue = value;
+            });
             },
           ),
+          const Spacer(),
+          customButton(
+                text: 'Next Step',
+                onPressed: () {
+                  UserModel.instance.height = currentValue;
+                  widget.onSubmit();
+                }),
+            const SizedBox(height: 20),
         ],
       ),
     );

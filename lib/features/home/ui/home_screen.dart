@@ -37,7 +37,11 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  HeaderPartWidget(onPressed: (){}, title: 'Select your Goal', hasSeeAll: false,),
+                  HeaderPartWidget(
+                    onPressed: () {},
+                    title: 'Select your Goal',
+                    hasSeeAll: false,
+                  ),
                   const SizedBox(
                     height: 15,
                   ),
@@ -45,7 +49,18 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  HeaderPartWidget(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const CategoryScreen(),),);}, title: 'Category', hasSeeAll: true,),
+                  HeaderPartWidget(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const CategoryScreen(),
+                        ),
+                      );
+                    },
+                    title: 'Category',
+                    hasSeeAll: true,
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -53,29 +68,74 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Divider(height: 0, color: Color(0xFF696969), thickness: 0,),
+                  const Divider(
+                    height: 0,
+                    color: Color(0xFF696969),
+                    thickness: 0,
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
-                  HeaderPartWidget(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const TrainingScreen(),),);}, title: 'Popular Exercise', hasSeeAll: true,),
+                  HeaderPartWidget(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const TrainingScreen(),
+                        ),
+                      );
+                    },
+                    title: 'Popular Exercise',
+                    hasSeeAll: true,
+                  ),
                   const PopularExerciseListview(),
                   const SizedBox(
                     height: 20,
                   ),
-                  const Divider(height: 0, color: Color(0xFF696969), thickness: 0,),
+                  const Divider(
+                    height: 0,
+                    color: Color(0xFF696969),
+                    thickness: 0,
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
-                  HeaderPartWidget(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const MealsScreen(),),);}, title: 'Meal Plans', hasSeeAll: true,),
+                  HeaderPartWidget(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MealsScreen(),
+                        ),
+                      );
+                    },
+                    title: 'Meal Plans',
+                    hasSeeAll: true,
+                  ),
                   const MealPlansListview(),
                   const SizedBox(
                     height: 20,
                   ),
-                  const Divider(height: 0, color: Color(0xFF696969), thickness: 0,),
+                  const Divider(
+                    height: 0,
+                    color: Color(0xFF696969),
+                    thickness: 0,
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
-                  HeaderPartWidget(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const FullExerciseScreen(),),);}, title: 'Additional Exercise', hasSeeAll: true,),
+                  HeaderPartWidget(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FullExerciseScreen(),
+                        ),
+                      );
+                    },
+                    title: 'Additional Exercise',
+                    hasSeeAll: true,
+                  ),
                   const AdditionalExerciseListview()
                 ],
               ),

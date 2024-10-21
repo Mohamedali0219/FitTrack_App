@@ -26,7 +26,7 @@ class ScreenHeader extends StatelessWidget {
             AppIcons.arrowBackIcon,
             colorFilter: const ColorFilter.mode(
                 ColorsManager.textBaseColor, BlendMode.srcIn),
-            width: 15,
+            width: 10,
           ),
         ),
         TextButton(

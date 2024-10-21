@@ -1,12 +1,15 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
+import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_textformfield.dart';
 import 'package:fit_track_app/features/auth/ui/auth_ui/forget_password/forget_password_screen.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_button.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_signin_with_google.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
+import 'package:fit_track_app/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:toastification/toastification.dart';
+import '../../../functions.dart';
 import '../sign_up/sign_up_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -22,8 +25,14 @@ class LoginScreen extends StatelessWidget {
     bool isHiddenPassword = false;
 
     Future<void> loginUser() async {
-      await FirebaseAuth.instance
+      var res = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email!, password: password!);
+      var user = UserModel.instance;
+      user.setUserID = res.user!.uid;
+    
+      await SharedPreference().setString(key: "user", value:user.getUID!); 
+      // print(UserModel.instance.toString());
+      // print(  " user is  ${SharedPreference().getString(key: "user")}");
     }
 
     return Form(

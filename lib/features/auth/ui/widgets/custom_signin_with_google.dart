@@ -1,11 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fit_track_app/features/auth/ui/steps_ui/steps_screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-
 import '../../../../core/themes/colors_manager.dart';
 import '../../../../core/utils/app_icons.dart';
-import '../../../drawer/ui/home_layout.dart';
 
 class CustomGoogleButton extends StatelessWidget {
   const CustomGoogleButton({super.key});
@@ -36,15 +35,15 @@ class CustomGoogleButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
-        onPressed: () {
-          signInWithGoogle().then((value) {
+        onPressed: () async {
+          await signInWithGoogle().then((value) {
             print(value.user!.uid);
           }).catchError((error) {
             print(error);
           });
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-              builder: (context) => const HomeLayout(),
+              builder: (context) => const OnboardingScreens(),
             ),
           );
         },

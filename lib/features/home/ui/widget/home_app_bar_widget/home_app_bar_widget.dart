@@ -1,4 +1,5 @@
 import 'package:fit_track_app/core/helper/Extension/functions.dart';
+import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -7,6 +8,7 @@ class HomeAppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var user = UserModel.instance;
     return Container(
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
@@ -76,13 +78,13 @@ class HomeAppBarWidget extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          const Text(
-            'Youssef !',
-            style: TextStyle(
+          Text(
+            user.getFullName!.toUpperCase(),
+            style: const TextStyle(
               color: Colors.white,
-              fontSize: 20,
+              fontSize: 25,
               fontFamily: 'DM Sans',
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(

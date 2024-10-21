@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/core/constants.dart';
+import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:fit_track_app/features/auth/ui/auth_ui/login/login_screen.dart';
 import 'package:fit_track_app/features/drawer/data/menu_model.dart';
 import 'package:flutter/material.dart';
@@ -62,9 +63,9 @@ class DrawerWidget extends StatelessWidget {
                 const SizedBox(
                   height: 7,
                 ),
-                const Text(
-                  'Youssef !',
-                  style: TextStyle(
+                Text(
+                  UserModel.instance.getFullName ?? "John Doe",
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 20,
                     fontFamily: 'DM Sans',
@@ -76,9 +77,9 @@ class DrawerWidget extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                const Text(
-                  'Basic member',
-                  style: TextStyle(
+                Text(
+                  UserModel.instance.getPhone ?? "1234567890",
+                  style: const TextStyle(
                     color: Color(0xFF3A4750),
                     fontSize: 14,
                     fontFamily: 'Montserrat',
@@ -99,7 +100,7 @@ class DrawerWidget extends StatelessWidget {
                   onTap: () async {
                     await FirebaseAuth.instance.signOut();
                     GoogleSignIn googleSignIn = GoogleSignIn();
-                     googleSignIn.disconnect();
+                    googleSignIn.disconnect();
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) => const LoginScreen(),

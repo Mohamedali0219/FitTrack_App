@@ -1,10 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fit_track_app/features/auth/data/model/user.dart';
+import 'package:fit_track_app/features/auth/ui/steps_ui/steps_screens.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_textformfield.dart';
 import 'package:fit_track_app/features/auth/ui/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import '../../../../../core/themes/colors_manager.dart';
-
+import '../../../functions.dart';
 import '../login/login_screen.dart';
 import '../../widgets/custom_signin_with_google.dart';
 import 'package:toastification/toastification.dart';
@@ -36,8 +38,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     //     isHiddenPassword = !isHiddenPassword;
     //   });
     // }
-
-
 
     return Form(
       key: formKey,
@@ -105,22 +105,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
                         try {
-                          await registerUser(email, password);
+                          await registerUser(email, password ,fullName!, phone! );
                           showToast(context, "successfully created account",
                               ToastificationType.success);
 
-                          if (FirebaseAuth
-                              .instance.currentUser!.emailVerified) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LoginScreen(),
-                              ),
-                            );
-                          } else {
-                            showToast(context, 'Something verify your email',
-                                ToastificationType.error);
-                          }
+                          // if (FirebaseAuth
+                          //     .instance.currentUser!.emailVerified) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const OnboardingScreens(),
+                            ),
+                          );
+                          //}
+                          // else {
+                          //   showToast(context, 'Please verify your email',
+                          //       ToastificationType.error);
+                          // }
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             showToast(
@@ -133,13 +134,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           } else if (e.code == 'invalid-email') {
                             showToast(context, 'The email address is invalid.',
                                 ToastificationType.error);
-                          } 
-                          // else {
-                          //   showToast(
-                          //       context,
-                          //       'Something went wrong , please try again.',
-                          //       ToastificationType.error);
-                          // }
+                          }
                         }
                       }
                     },
@@ -187,21 +182,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Future<void> registerUser(String? email, String? password) async {
-    await FirebaseAuth.instance
+  Future<void> registerUser(String? email, String? password  ,String? fullName, String ? phone) async {
+    UserCredential userCredential = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email!, password: password!);
-    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
+    // await FirebaseAuth.instance.currentUser!.sendEmailVerification();
+    UserModel.instance.setNewUser(id: userCredential.user!.uid, email: email, name: fullName!, phone: phone!);
+    await FirebaseFirestore.instance.collection('users').doc(userCredential.user!.uid).set({
+      'fullName': fullName,
+      'phone': phone,
+      'email': email,
+    });
   }
 }
 
-void showToast(BuildContext context, String text, ToastificationType type) {
-  toastification.show(
-    context: context,
-    title: Text(text),
-    autoCloseDuration: const Duration(seconds: 3),
-    type: type,
-    borderRadius: BorderRadius.circular(15),
-    style: ToastificationStyle.minimal,
-    primaryColor: ColorsManager.primaryColor,
-  );
-}

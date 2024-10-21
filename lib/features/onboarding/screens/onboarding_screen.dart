@@ -1,4 +1,5 @@
 import 'package:fit_track_app/features/onboarding/data/model/onboarding_model.dart';
+import 'package:fit_track_app/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import "package:smooth_page_indicator/smooth_page_indicator.dart";
@@ -67,6 +68,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 children: [
                   TextButton(
                     onPressed: () {
+                      SharedPreference().setBool(key: "onBoarding", value: true);
                        Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),
@@ -99,6 +101,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   TextButton(
                     onPressed: () {
                       if (boardingController.page == boarding.length - 1) {
+                        SharedPreference().setBool(key: "onBoarding", value: true);
                          Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),

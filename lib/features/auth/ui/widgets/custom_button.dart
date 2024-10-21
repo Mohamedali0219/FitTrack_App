@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/themes/colors_manager.dart';
 
 Widget customButton({
-  required Function() onPressed,
+  required void Function() onPressed,
   required String text,
 }) =>
     SizedBox(

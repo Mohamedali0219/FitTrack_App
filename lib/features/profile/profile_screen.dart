@@ -1,3 +1,5 @@
+
+import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:fit_track_app/features/profile/widgets/goal_type_widget/goal_type_listview.dart';
 import 'package:fit_track_app/features/profile/widgets/info_row/info_row.dart';
@@ -10,11 +12,18 @@ import '../../core/utils/app_icons.dart';
 import 'edit_profile_screen.dart';
 import 'widgets/macronutrient_goals/macronutrient_goal.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
   Widget build(BuildContext context) {
+    var user= UserModel.instance;
+    print(user.toString());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -79,19 +88,19 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Center(
-              child: Text(
-                'Dhruvit!',
-                style: TextStyles.styleSemiBold(context,
-                    fontSize: 16, color: ColorsManager.textBaseColor),
-              ),
-            ),
+                    child: Text(
+                      user.getFullName ?? '',
+                      style: TextStyles.styleSemiBold(context,
+                          fontSize: 16, color: ColorsManager.textBaseColor),
+                    ),
+                  ),
             Center(
-              child: Text(
-                'Basic member',
-                style: TextStyles.styleMedium(context,
-                    fontSize: 16, color: ColorsManager.textBaseColor),
-              ),
-            ),
+                    child: Text(
+                      user.getPhone?? '',
+                      style: TextStyles.styleSemiBold(context,
+                          fontSize: 16, color: ColorsManager.textBaseColor),
+                    ),
+                  ),
             const SizedBox(height: 10),
             const InfoRow(),
             const SizedBox(height: 20),
