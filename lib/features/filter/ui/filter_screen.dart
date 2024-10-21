@@ -52,7 +52,7 @@ class _FilterScreenState extends State<FilterScreen> {
         isText: true,
         hasAction: true,
         icon: 'Clear All',
-        hasActionOnPressed: (){
+        hasActionOnPressed: () {
           setState(() {
             isSelected1 = false;
             isSelected2 = false;
@@ -151,7 +151,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected4 = !isSelected4;
                     });
@@ -165,7 +165,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected5 = !isSelected5;
                     });
@@ -179,7 +179,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected6 = !isSelected6;
                     });
@@ -193,7 +193,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected7 = !isSelected7;
                     });
@@ -207,7 +207,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected8 = !isSelected8;
                     });
@@ -221,7 +221,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected9 = !isSelected9;
                     });
@@ -294,7 +294,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected14 = !isSelected14;
                     });
@@ -308,7 +308,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected15 = !isSelected15;
                     });
@@ -322,7 +322,7 @@ class _FilterScreenState extends State<FilterScreen> {
                   width: 15,
                 ),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected16 = !isSelected16;
                     });
@@ -515,7 +515,7 @@ class _FilterScreenState extends State<FilterScreen> {
               height: 20,
             ),
             defaultButton(
-              onPressed: (){},
+              onPressed: () {},
               text: 'Apply Filters',
               fontSize: 22,
               radius: 8.0,

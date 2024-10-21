@@ -19,6 +19,7 @@ class BuildGoalScreen extends StatefulWidget {
 
 class _BuildGoalScreenState extends State<BuildGoalScreen> {
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     final List<String> goalTypes = [

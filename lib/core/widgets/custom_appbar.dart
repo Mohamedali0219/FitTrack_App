@@ -5,7 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title, this.isback = false, this.hasAction = false, this.icon = '', this.onPressed, this.isText = false, this.hasActionOnPressed});
+  const CustomAppBar(
+      {super.key,
+      required this.title,
+      this.isback = false,
+      this.hasAction = false,
+      this.icon = '',
+      this.onPressed,
+      this.isText = false,
+      this.hasActionOnPressed});
 
   final String title;
   final bool isback;
@@ -49,16 +57,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               right: 20,
               child: IconButton(
                 onPressed: hasActionOnPressed,
-                icon: isText ?
-                Text(
-                  icon,
-                  style: const TextStyle(
-                    color: Color(0xFF303841),
-                    fontSize: 10,
-                    fontFamily: 'Montserrat',
-                    fontWeight: FontWeight.w500,
-                  ),
-                ) : setPhoto(kind: 1, path: icon, height: 20, width: 20),
+                icon: isText
+                    ? Text(
+                        icon,
+                        style: const TextStyle(
+                          color: Color(0xFF303841),
+                          fontSize: 10,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      )
+                    : setPhoto(kind: 1, path: icon, height: 20, width: 20),
               ),
             ),
           ),

@@ -3,11 +3,13 @@ import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class TrainingKindItems extends StatelessWidget {
-  const TrainingKindItems({super.key, required this.isSelected, required this.kindType});
+  const TrainingKindItems(
+      {super.key, required this.isSelected, required this.kindType});
 
   final bool isSelected;
 
   final String kindType;
+
   @override
   Widget build(BuildContext context) {
     return Container(

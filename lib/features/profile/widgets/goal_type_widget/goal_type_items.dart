@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 
 class CategoryTypeItems extends StatelessWidget {
   const CategoryTypeItems(
-      {super.key, this.isSelected = false, required this.categoryTypeName, required this.categoryTypeImage});
+      {super.key,
+      this.isSelected = false,
+      required this.categoryTypeName,
+      required this.categoryTypeImage});
 
   final bool isSelected;
   final String categoryTypeName;

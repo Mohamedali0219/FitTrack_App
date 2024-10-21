@@ -12,6 +12,7 @@ class ReminderTimeWidget extends StatefulWidget {
 class _ReminderTimeWidgetState extends State<ReminderTimeWidget> {
   TimeOfDay selectedTime = TimeOfDay.now();
   String dayInterval = '';
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,8 +23,14 @@ class _ReminderTimeWidgetState extends State<ReminderTimeWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Icon(Icons.timer_outlined, size: 15, color: ColorsManager.blackColor,),
-            SizedBox(width: 5.0,),
+            Icon(
+              Icons.timer_outlined,
+              size: 15,
+              color: ColorsManager.blackColor,
+            ),
+            SizedBox(
+              width: 5.0,
+            ),
             Text(
               'Time',
               style: TextStyle(
@@ -42,16 +49,16 @@ class _ReminderTimeWidgetState extends State<ReminderTimeWidget> {
               initialTime: selectedTime,
               initialEntryMode: TimePickerEntryMode.input,
             );
-            if(timeOfDay != null){
+            if (timeOfDay != null) {
               setState(() {
                 selectedTime = timeOfDay;
               });
             }
-            if(selectedTime.hour > 12){
+            if (selectedTime.hour > 12) {
               setState(() {
                 dayInterval = 'PM';
               });
-            }else{
+            } else {
               setState(() {
                 dayInterval = 'AM';
               });

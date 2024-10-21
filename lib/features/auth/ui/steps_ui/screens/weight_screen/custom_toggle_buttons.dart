@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 class CustomToggleButtons extends StatefulWidget {
   final String unit1; // First unit (e.g., KG or CM)
   final String unit2; // Second unit (e.g., LBS or Feet)
-  final Function(String) onUnitChanged; // Callback to inform parent widget of unit change
+  final Function(String)
+      onUnitChanged; // Callback to inform parent widget of unit change
 
   const CustomToggleButtons({
-    super.key, 
-    required this.unit1, 
-    required this.unit2, 
+    super.key,
+    required this.unit1,
+    required this.unit2,
     required this.onUnitChanged,
   });
 
@@ -40,7 +41,8 @@ class _CustomToggleButtonsState extends State<CustomToggleButtons> {
         setState(() {
           selectedUnit = index == 0 ? widget.unit1 : widget.unit2;
         });
-        widget.onUnitChanged(selectedUnit); // Pass selected unit back to parent widget
+        widget.onUnitChanged(
+            selectedUnit); // Pass selected unit back to parent widget
       },
       children: [
         Padding(

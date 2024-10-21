@@ -21,9 +21,7 @@ class _TrainingKindListviewState extends State<TrainingKindListview> {
     ];
     return SizedBox(
       height: 60, // Adjust height as needed
-      width: MediaQuery
-          .sizeOf(context)
-          .width,
+      width: MediaQuery.sizeOf(context).width,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemExtent: trainingKinds.length * 41.0,

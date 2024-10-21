@@ -6,8 +6,10 @@ import '../../../../core/themes/text_styles.dart';
 class InfoRowItem extends StatelessWidget {
   const InfoRowItem(
       {super.key, required this.firstText, required this.secondText});
+
   final String firstText;
   final String secondText;
+
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -1,4 +1,3 @@
-
 // Page 5: Height Screen
 import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:flutter/material.dart';

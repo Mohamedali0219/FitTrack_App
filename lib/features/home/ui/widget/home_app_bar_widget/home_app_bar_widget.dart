@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/core/helper/Extension/functions.dart';
 import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:flutter/material.dart';
@@ -37,9 +38,9 @@ class HomeAppBarWidget extends StatelessWidget {
               Container(
                 width: 44,
                 height: 44,
-                decoration: const ShapeDecoration(
+                decoration: ShapeDecoration(
                   image: DecorationImage(
-                    image: NetworkImage("https://via.placeholder.com/44x44"),
+                    image: NetworkImage(FirebaseAuth.instance.currentUser?.photoURL ?? "https://via.placeholder.com/44x44"),
                     fit: BoxFit.fill,
                   ),
                   shape: OvalBorder(),
@@ -78,9 +79,9 @@ class HomeAppBarWidget extends StatelessWidget {
             user.getFullName!.toUpperCase(),
             style: const TextStyle(
               color: Colors.white,
-              fontSize: 25,
+              fontSize: 20,
               fontFamily: 'DM Sans',
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
             ),
           ),
           const SizedBox(

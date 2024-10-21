@@ -3,19 +3,23 @@ import 'package:flutter/material.dart';
 import '../weight_screen/custom_toggle_buttons.dart';
 
 class NumberInputHight extends StatefulWidget {
-  const NumberInputHight({super.key, required this.currentValue, required this.title, required this.onValueChange});
+  const NumberInputHight(
+      {super.key,
+      required this.currentValue,
+      required this.title,
+      required this.onValueChange});
 
-  final String title ;
+  final String title;
+
   final Function(String) onValueChange;
   final String currentValue;
-
 
   @override
   State<NumberInputHight> createState() => _NumberInputHightState();
 }
 
 class _NumberInputHightState extends State<NumberInputHight> {
- late String selectedUnit;
+  late String selectedUnit;
   late TextEditingController controller;
 
   @override

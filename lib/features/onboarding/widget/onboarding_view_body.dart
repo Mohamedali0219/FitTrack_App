@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class OnBoardingBody extends StatelessWidget {
-  const OnBoardingBody({super.key, required this.image , required this.body});
-  final String image; 
+  const OnBoardingBody({super.key, required this.image, required this.body});
+
+  final String image;
   final String body;
 
   @override
@@ -11,14 +12,14 @@ class OnBoardingBody extends StatelessWidget {
       children: [
         Expanded(
           child: Image.asset(
-                  image,
-              ),
+            image,
+          ),
         ),
-             const SizedBox(height: 20),
-           Image.asset(
-                body,
-            ),
-             const SizedBox(height: 30),
+        const SizedBox(height: 20),
+        Image.asset(
+          body,
+        ),
+        const SizedBox(height: 30),
       ],
     );
   }

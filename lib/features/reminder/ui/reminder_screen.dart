@@ -13,7 +13,11 @@ class ReminderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Reminder", isback: true, onPressed: () => context.pop(),),
+      appBar: CustomAppBar(
+        title: "Reminder",
+        isback: true,
+        onPressed: () => context.pop(),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -21,12 +25,20 @@ class ReminderScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const ReminderDateWidget(),
-            const SizedBox(height: 40.0,),
+            const SizedBox(
+              height: 40.0,
+            ),
             const ReminderTimeWidget(),
-            const SizedBox(height: 50.0,),
+            const SizedBox(
+              height: 50.0,
+            ),
             const ListTile(
               contentPadding: EdgeInsets.all(0),
-              leading: Icon(Icons.notifications_none_outlined, size: 15, color: ColorsManager.blackColor,),
+              leading: Icon(
+                Icons.notifications_none_outlined,
+                size: 15,
+                color: ColorsManager.blackColor,
+              ),
               title: Text('Set Reminder'),
               titleTextStyle: TextStyle(
                 color: ColorsManager.textBaseColor,
@@ -45,14 +57,11 @@ class ReminderScreen extends StatelessWidget {
             ),
             const Spacer(),
             defaultButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 background: ColorsManager.primaryColor,
                 text: 'Create',
                 fontSize: 22,
-                radius: 8
-            ),
+                radius: 8),
           ],
         ),
       ),

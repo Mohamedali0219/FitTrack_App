@@ -31,7 +31,9 @@ class ResultScreen extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const SizedBox(height: 10.0,),
+            const SizedBox(
+              height: 10.0,
+            ),
             const Text(
               'Exercises with Sitting Dumbbells',
               style: TextStyle(
@@ -41,7 +43,9 @@ class ResultScreen extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const SizedBox(height: 12.0,),
+            const SizedBox(
+              height: 12.0,
+            ),
             const Text(
               'Completed on 24/02/2022',
               style: TextStyle(
@@ -51,7 +55,9 @@ class ResultScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const SizedBox(height: 11.0,),
+            const SizedBox(
+              height: 11.0,
+            ),
             const Text(
               'Exercise 3/12',
               style: TextStyle(
@@ -61,7 +67,9 @@ class ResultScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const SizedBox(height: 24.0,),
+            const SizedBox(
+              height: 24.0,
+            ),
             const Text(
               'Workout summary',
               style: TextStyle(
@@ -71,74 +79,9 @@ class ResultScreen extends StatelessWidget {
                 fontWeight: FontWeight.w700,
               ),
             ),
-            const SizedBox(height: 20.0,),
-            Row(
-             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [
-               Chip(
-                 backgroundColor: Colors.grey[300],
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(8),
-                   side: BorderSide(color: Colors.grey[300] ?? Colors.transparent),
-                 ),
-                 label: const Column(
-                   children: [
-                     Text(
-                       'Total time',
-                       style: TextStyle(
-                         color: Color(0xFF303841),
-                         fontSize: 16,
-                         fontFamily: 'Montserrat',
-                         fontWeight: FontWeight.w600,
-                       ),
-                     ),
-                     SizedBox(height: 10,),
-                     Text(
-                       '00:45 min',
-                       style: TextStyle(
-                         color: Color(0xFF191919),
-                         fontSize: 16,
-                         fontFamily: 'Montserrat',
-                         fontWeight: FontWeight.w500,
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
-               Chip(
-                 backgroundColor: Colors.grey[300],
-                 shape: RoundedRectangleBorder(
-                   borderRadius: BorderRadius.circular(8),
-                   side: BorderSide(color: Colors.grey[300] ?? Colors.transparent),
-                 ),
-                 label: const Column(
-                   children: [
-                     Text(
-                       'Total calories',
-                       style: TextStyle(
-                         color: Color(0xFF303841),
-                         fontSize: 16,
-                         fontFamily: 'Montserrat',
-                         fontWeight: FontWeight.w600,
-                       ),
-                     ),
-                     SizedBox(height: 10,),
-                     Text(
-                       '120 kcal',
-                       style: TextStyle(
-                         color: Color(0xFF191919),
-                         fontSize: 16,
-                         fontFamily: 'Montserrat',
-                         fontWeight: FontWeight.w500,
-                       ),
-                     ),
-                   ],
-                 ),
-               ),
-             ],
+            const SizedBox(
+              height: 20.0,
             ),
-            const SizedBox(height: 25.0,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -147,7 +90,83 @@ class ResultScreen extends StatelessWidget {
                   backgroundColor: Colors.grey[300],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
-                    side: BorderSide(color: Colors.grey[300] ?? Colors.transparent),
+                    side: BorderSide(
+                        color: Colors.grey[300] ?? Colors.transparent),
+                  ),
+                  label: const Column(
+                    children: [
+                      Text(
+                        'Total time',
+                        style: TextStyle(
+                          color: Color(0xFF303841),
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        '00:45 min',
+                        style: TextStyle(
+                          color: Color(0xFF191919),
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Chip(
+                  backgroundColor: Colors.grey[300],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(
+                        color: Colors.grey[300] ?? Colors.transparent),
+                  ),
+                  label: const Column(
+                    children: [
+                      Text(
+                        'Total calories',
+                        style: TextStyle(
+                          color: Color(0xFF303841),
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        '120 kcal',
+                        style: TextStyle(
+                          color: Color(0xFF191919),
+                          fontSize: 16,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 25.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Chip(
+                  backgroundColor: Colors.grey[300],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(
+                        color: Colors.grey[300] ?? Colors.transparent),
                   ),
                   label: const Column(
                     children: [
@@ -160,7 +179,9 @@ class ResultScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Text(
                         '59kg',
                         style: TextStyle(
@@ -177,7 +198,8 @@ class ResultScreen extends StatelessWidget {
                   backgroundColor: Colors.grey[300],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
-                    side: BorderSide(color: Colors.grey[300] ?? Colors.transparent),
+                    side: BorderSide(
+                        color: Colors.grey[300] ?? Colors.transparent),
                   ),
                   label: const Column(
                     children: [
@@ -190,7 +212,9 @@ class ResultScreen extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Text(
                         '115 bmp',
                         style: TextStyle(
@@ -206,7 +230,17 @@ class ResultScreen extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            defaultButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen(),),);}, text: 'Save', fontSize: 22)
+            defaultButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    ),
+                  );
+                },
+                text: 'Save',
+                fontSize: 22)
           ],
         ),
       ),

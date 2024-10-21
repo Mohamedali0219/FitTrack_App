@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 class CustomCalendar extends StatefulWidget {
-  const   CustomCalendar({super.key});
+  const CustomCalendar({super.key});
 
   @override
   CustomCalendarState createState() => CustomCalendarState();

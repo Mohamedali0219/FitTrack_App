@@ -11,7 +11,9 @@ class KcalAndClockSction extends StatelessWidget {
     required this.kcal,
     required this.clock,
   });
+
   final String kcal, clock;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

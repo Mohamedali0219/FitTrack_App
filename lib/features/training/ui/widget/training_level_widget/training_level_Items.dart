@@ -3,11 +3,13 @@ import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class TrainingLevelItems extends StatelessWidget {
-  const TrainingLevelItems({super.key, this.isSelected = false, required this.levelType});
+  const TrainingLevelItems(
+      {super.key, this.isSelected = false, required this.levelType});
 
   final bool isSelected;
 
   final String levelType;
+
   @override
   Widget build(BuildContext context) {
     return Container(

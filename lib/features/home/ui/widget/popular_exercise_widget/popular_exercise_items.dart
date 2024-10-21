@@ -12,6 +12,7 @@ class PopularExerciseItems extends StatefulWidget {
 class _PopularExerciseItemsState extends State<PopularExerciseItems> {
   bool isSelected = false;
   bool isLocked = false;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,12 +40,16 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
                   right: 10.0,
                 ),
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     setState(() {
                       isSelected = !isSelected;
                     });
                   },
-                  child: FavoriteBtnWidget(isSelected: isSelected,isLocked: false,),),
+                  child: FavoriteBtnWidget(
+                    isSelected: isSelected,
+                    isLocked: false,
+                  ),
+                ),
               ),
             ],
           ),

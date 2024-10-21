@@ -5,16 +5,18 @@ class AdditionalExerciseListview extends StatefulWidget {
   const AdditionalExerciseListview({super.key});
 
   @override
-  State<AdditionalExerciseListview> createState() => _AdditionalExerciseListviewState();
+  State<AdditionalExerciseListview> createState() =>
+      _AdditionalExerciseListviewState();
 }
 
-class _AdditionalExerciseListviewState extends State<AdditionalExerciseListview> {
+class _AdditionalExerciseListviewState
+    extends State<AdditionalExerciseListview> {
   int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 140*3, // Adjust height as needed
+      height: 140 * 3, // Adjust height as needed
       child: ListView.separated(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -27,8 +29,7 @@ class _AdditionalExerciseListviewState extends State<AdditionalExerciseListview>
                   selectedIndex = index;
                 });
               },
-              child: const AdditionalExerciseItems()
-          );
+              child: const AdditionalExerciseItems());
         },
         separatorBuilder: (BuildContext context, int index) {
           return const Padding(

@@ -5,7 +5,8 @@ class PopularExerciseListview extends StatefulWidget {
   const PopularExerciseListview({super.key});
 
   @override
-  State<PopularExerciseListview> createState() => _PopularExerciseListviewState();
+  State<PopularExerciseListview> createState() =>
+      _PopularExerciseListviewState();
 }
 
 class _PopularExerciseListviewState extends State<PopularExerciseListview> {
@@ -14,7 +15,7 @@ class _PopularExerciseListviewState extends State<PopularExerciseListview> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260*3, // Adjust height as needed
+      height: 260 * 3, // Adjust height as needed
       child: ListView.separated(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -22,13 +23,12 @@ class _PopularExerciseListviewState extends State<PopularExerciseListview> {
         itemCount: 3,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedIndex = index;
-              });
-            },
-            child: const PopularExerciseItems()
-          );
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: const PopularExerciseItems());
         },
         separatorBuilder: (BuildContext context, int index) {
           return const Padding(

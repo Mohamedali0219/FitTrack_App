@@ -7,7 +7,8 @@ class CustomAgeSpinner extends StatefulWidget {
   final Function(int) onChanged;
 
   const CustomAgeSpinner(
-      {super.key, required this.minValue,
+      {super.key,
+      required this.minValue,
       required this.maxValue,
       required this.initialValue,
       required this.onChanged});
