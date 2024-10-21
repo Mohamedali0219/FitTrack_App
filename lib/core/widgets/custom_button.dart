@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../themes/colors_manager.dart';
 
-
 Widget defaultButton({
   // login and signUp button
   final bool isLoading = false,
@@ -27,11 +26,11 @@ Widget defaultButton({
       child: MaterialButton(
         onPressed: onPressed,
         child: Text(
-                text,
-                style: TextStyle(
-                  fontSize: fontSize,
-                  color: textColor,
-                ),
-              ),
+          text,
+          style: TextStyle(
+            fontSize: fontSize,
+            color: textColor,
+          ),
+        ),
       ),
     );

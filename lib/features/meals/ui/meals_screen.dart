@@ -14,7 +14,13 @@ class MealsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Meals PLans', isback: true, onPressed: (){context.pop();},),
+      appBar: CustomAppBar(
+        title: 'Meals PLans',
+        isback: true,
+        onPressed: () {
+          context.pop();
+        },
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(

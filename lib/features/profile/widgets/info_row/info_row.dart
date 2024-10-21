@@ -1,6 +1,7 @@
 import 'package:fit_track_app/features/profile/widgets/info_row/info_row_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import '../../../../core/utils/app_icons.dart';
 import '../../../auth/data/model/user.dart';
 

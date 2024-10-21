@@ -14,7 +14,7 @@ class _MealPlansListviewState extends State<MealPlansListview> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 260*2, // Adjust height as needed
+      height: 260 * 2, // Adjust height as needed
       child: ListView.separated(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
@@ -27,8 +27,7 @@ class _MealPlansListviewState extends State<MealPlansListview> {
                   selectedIndex = index;
                 });
               },
-              child: const MealPlansItems()
-          );
+              child: const MealPlansItems());
         },
         separatorBuilder: (BuildContext context, int index) {
           return const Padding(

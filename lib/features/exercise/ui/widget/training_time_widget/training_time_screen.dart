@@ -23,7 +23,7 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
     const oneSec = Duration(seconds: 1);
     _timer = Timer.periodic(
       oneSec,
-          (Timer timer) {
+      (Timer timer) {
         if (_start == 0) {
           setState(() {
             timer.cancel();
@@ -86,9 +86,8 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
                 bottomLeft: Radius.circular(16),
               ),
               image: DecorationImage(
-                image: AssetImage('assets/images/exercise2.png'),
-                fit: BoxFit.cover
-              ),
+                  image: AssetImage('assets/images/exercise2.png'),
+                  fit: BoxFit.cover),
             ),
           ),
           SizedBox(
@@ -106,7 +105,9 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 5,),
+                  const SizedBox(
+                    height: 5,
+                  ),
                   const Text(
                     'Stretching Workout Length',
                     style: TextStyle(
@@ -116,7 +117,9 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  const SizedBox(height: 30,),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   Center(
                     child: Stack(
                       alignment: Alignment.center,
@@ -126,7 +129,8 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
                           width: 80,
                           child: CircularProgressIndicator(
                             value: minutes / seconds,
-                            valueColor: const AlwaysStoppedAnimation(ColorsManager.blackColor),
+                            valueColor: const AlwaysStoppedAnimation(
+                                ColorsManager.blackColor),
                             strokeWidth: 8,
                             backgroundColor: Colors.grey[300],
                           ),
@@ -143,13 +147,15 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 30.0,),
+                  const SizedBox(
+                    height: 30.0,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       defaultButton(
-                        onPressed: (){
+                        onPressed: () {
                           stopTimer();
                         },
                         text: 'Stop',
@@ -162,7 +168,7 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
                         broder: ColorsManager.textBaseColor,
                       ),
                       defaultButton(
-                        onPressed: (){
+                        onPressed: () {
                           resetTimer(_start);
                         },
                         text: 'Next Training',
@@ -183,7 +189,17 @@ class _TrainingTimeScreenState extends State<TrainingTimeScreen> {
       ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: defaultButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const ResultScreen(),),);}, text: 'Finish', fontSize: 22),
+        child: defaultButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ResultScreen(),
+                ),
+              );
+            },
+            text: 'Finish',
+            fontSize: 22),
       ),
     );
   }

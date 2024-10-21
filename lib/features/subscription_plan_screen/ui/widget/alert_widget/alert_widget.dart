@@ -1,8 +1,8 @@
 import 'package:fit_track_app/core/helper/Extension/navigation_extension.dart';
-import 'package:fit_track_app/features/subscription_plan_screen/ui/subscripition_plan_screen.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:flutter/material.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
+import 'package:fit_track_app/features/subscription_plan_screen/ui/subscripition_plan_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 Future<bool?> buildAlertShow(BuildContext context) {
   return Alert(
@@ -17,8 +17,12 @@ Future<bool?> buildAlertShow(BuildContext context) {
       DialogButton(
         onPressed: () {
           context.pop();
-          Navigator.push(context, MaterialPageRoute(
-            builder: (context) => const SubscriptionPlanScreen(),),);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const SubscriptionPlanScreen(),
+            ),
+          );
         },
         color: ColorsManager.primaryColor,
         height: 55,

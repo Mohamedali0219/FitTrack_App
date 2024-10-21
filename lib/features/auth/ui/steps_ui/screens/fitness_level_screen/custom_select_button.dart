@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../../core/themes/colors_manager.dart';
 import '../../../../../../core/themes/text_styles.dart';
 
 class CustomSelectionButton extends StatelessWidget {
   const CustomSelectionButton(
       {super.key, this.isSelected = false, required this.goalType});
+
   final bool isSelected;
   final String goalType;
 
@@ -68,9 +70,9 @@ class CustomSelectionButton2 extends StatelessWidget {
             children: [
               const SizedBox(width: 10),
               Image.asset(
-                  image,
-                  width: 30,
-                  height: 30,
+                image,
+                width: 30,
+                height: 30,
               ),
               const SizedBox(width: 20),
               Text(

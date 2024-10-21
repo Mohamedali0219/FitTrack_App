@@ -33,17 +33,9 @@ class _CategoryTypeListviewState extends State<CategoryTypeListview> {
         scrollDirection: Axis.horizontal,
         itemCount: categoryTypesName.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-              onTap: () {
-                setState(() {
-                  selectedIndex = index;
-                });
-              },
-              child: CategoryTypeItems(
-                isSelected: selectedIndex == index,
-                categoryTypeImage: categoryTypesImages[index],
-                categoryTypeName: categoryTypesName[index],
-              ));
+          // return CategoryTypeItems(
+          //   categoryTypeName: categoryTypesName[index],
+          // );
         },
       ),
     );

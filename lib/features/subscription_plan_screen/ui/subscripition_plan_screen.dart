@@ -37,7 +37,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 17,),
+          const SizedBox(
+            height: 17,
+          ),
           SizedBox(
             height: MediaQuery.sizeOf(context).height - 400,
             child: ListView(
@@ -53,7 +55,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 const Center(
                   child: Text(
                     'It is a long established fact that a reader \nwill be distracted by the readable',
@@ -66,7 +70,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Row(
@@ -88,7 +94,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10,),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       const Text(
                         'Create your training plan',
                         style: TextStyle(
@@ -122,7 +130,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10,),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       const Text(
                         'Lorem Ipsum is simply dummy text of printing',
                         style: TextStyle(
@@ -156,7 +166,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10,),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       const Text(
                         'Lorem Ipsum is simply dummy text of printing',
                         style: TextStyle(
@@ -190,7 +202,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10,),
+                      const SizedBox(
+                        width: 10,
+                      ),
                       const Text(
                         'Lorem Ipsum is simply dummy text of printing',
                         style: TextStyle(
@@ -203,7 +217,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
@@ -233,7 +249,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 20.0,),
+                            SizedBox(
+                              height: 20.0,
+                            ),
                             Text(
                               'Yearly',
                               textAlign: TextAlign.center,
@@ -244,7 +262,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(height: 5.0,),
+                            SizedBox(
+                              height: 5.0,
+                            ),
                             Text(
                               '\$6.99',
                               textAlign: TextAlign.center,
@@ -281,7 +301,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 20.0,),
+                            SizedBox(
+                              height: 20.0,
+                            ),
                             Text(
                               'Yearly',
                               textAlign: TextAlign.center,
@@ -292,7 +314,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(height: 5.0,),
+                            SizedBox(
+                              height: 5.0,
+                            ),
                             Text(
                               '\$29.99',
                               textAlign: TextAlign.center,
@@ -329,7 +353,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            SizedBox(height: 20.0,),
+                            SizedBox(
+                              height: 20.0,
+                            ),
                             Text(
                               'Life-Time',
                               textAlign: TextAlign.center,
@@ -340,7 +366,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                            SizedBox(height: 5.0,),
+                            SizedBox(
+                              height: 5.0,
+                            ),
                             Text(
                               '\$49.99',
                               textAlign: TextAlign.center,
@@ -357,10 +385,17 @@ class SubscriptionPlanScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(20.0),
-                  child: defaultButton(onPressed: (){}, text: 'Go Premium', fontSize: 20, radius: 8,),
+                  child: defaultButton(
+                    onPressed: () {},
+                    text: 'Go Premium',
+                    fontSize: 20,
+                    radius: 8,
+                  ),
                 ),
                 const Align(
                   alignment: Alignment.center,
@@ -379,7 +414,9 @@ class SubscriptionPlanScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
               ],
             ),
           ),

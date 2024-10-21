@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 class ReminderDateWidget extends StatefulWidget {
-  const   ReminderDateWidget({super.key});
+  const ReminderDateWidget({super.key});
 
   @override
   ReminderDateWidgetState createState() => ReminderDateWidgetState();
@@ -48,14 +48,22 @@ class ReminderDateWidgetState extends State<ReminderDateWidget> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(Icons.calendar_month_outlined, size: 15, color: ColorsManager.blackColor,),
-                SizedBox(width: 5,),
-                Text('Date', style: TextStyle(
-                  color: ColorsManager.textBaseColor,
-                  fontSize: 14,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w600,
+                Icon(
+                  Icons.calendar_month_outlined,
+                  size: 15,
+                  color: ColorsManager.blackColor,
                 ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  'Date',
+                  style: TextStyle(
+                    color: ColorsManager.textBaseColor,
+                    fontSize: 14,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),
@@ -125,7 +133,7 @@ class ReminderDateWidgetState extends State<ReminderDateWidget> {
                 .day, // Get the number of days in the current month
             itemBuilder: (context, index) {
               DateTime date =
-              DateTime(currentMonth.year, currentMonth.month, index + 1);
+                  DateTime(currentMonth.year, currentMonth.month, index + 1);
               bool isSelected = date.day == selectedDate.day &&
                   date.month == selectedDate.month &&
                   date.year == selectedDate.year;
@@ -177,7 +185,7 @@ class ReminderDateWidgetState extends State<ReminderDateWidget> {
                               ),
                             ))
                       else
-                      // No circle for selected days, just white text
+                        // No circle for selected days, just white text
                         Text(
                           date.day.toString(),
                           style: TextStyles.styleSemiBold(

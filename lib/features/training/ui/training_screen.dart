@@ -23,7 +23,12 @@ class TrainingScreen extends StatelessWidget {
             builder: (context) => const HomeLayout(),
           ),
         ),
-        hasActionOnPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const FilterScreen(),),),
+        hasActionOnPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const FilterScreen(),
+          ),
+        ),
       ),
       body: ListView(
         scrollDirection: Axis.vertical,

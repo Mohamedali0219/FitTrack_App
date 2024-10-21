@@ -1,5 +1,3 @@
-
-
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';

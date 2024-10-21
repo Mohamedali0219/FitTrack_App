@@ -19,24 +19,28 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   var boardingController = PageController();
   bool isLast = false;
- List <OnBoardingModel> boarding = [
-  OnBoardingModel(image: 'assets/images/image3.png', body: "assets/images/Prefect body Text.png"),
-  OnBoardingModel(image: 'assets/images/image4.png', body: "assets/images/Shot Strong Text.png"),
- ];
+  List<OnBoardingModel> boarding = [
+    OnBoardingModel(
+        image: 'assets/images/image3.png',
+        body: "assets/images/Prefect body Text.png"),
+    OnBoardingModel(
+        image: 'assets/images/image4.png',
+        body: "assets/images/Shot Strong Text.png"),
+  ];
+
   @override
-  Widget build(BuildContext context ) {
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/background_image.jpg'),
-            fit: BoxFit.cover
-          ),
+              image: AssetImage('assets/images/background_image.jpg'),
+              fit: BoxFit.cover),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Expanded(
+            Expanded(
               child: PageView.builder(
                 controller: boardingController,
                 onPageChanged: (int index) {
@@ -53,36 +57,33 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 physics: const BouncingScrollPhysics(),
                 itemCount: boarding.length,
                 itemBuilder: (context, index) {
-                   return OnBoardingBody(
-                 image: boarding[index].image,
-                  body: boarding[index].body,
-                );
-               },
+                  return OnBoardingBody(
+                    image: boarding[index].image,
+                    body: boarding[index].body,
+                  );
+                },
               ),
             ),
-           const SizedBox(height: 20), 
+            const SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0), // Padding for the buttons and indicator
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              // Padding for the buttons and indicator
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton(
                     onPressed: () {
                       SharedPreference().setBool(key: "onBoarding", value: true);
-                       Navigator.of(context).pushReplacement(
+                      Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),
                         ),
                       );
-              
                     },
                     child: Text(
                       "Skip",
-                     style: TextStyles.styleSemiBold(
-                          context,
-                          fontSize: 20.sp,
-                          color: ColorsManager.blackColor
-                        ),
+                      style: TextStyles.styleSemiBold(context,
+                          fontSize: 20.sp, color: ColorsManager.blackColor),
                     ),
                   ),
                   // Page indicator
@@ -90,7 +91,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     controller: boardingController,
                     effect: const ExpandingDotsEffect(
                       activeDotColor: ColorsManager.primaryColor,
-                      dotColor:  ColorsManager.blackColor,
+                      dotColor: ColorsManager.blackColor,
                       dotHeight: 10,
                       dotWidth: 10,
                       spacing: 5,
@@ -102,12 +103,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     onPressed: () {
                       if (boardingController.page == boarding.length - 1) {
                         SharedPreference().setBool(key: "onBoarding", value: true);
-                         Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreen(),
-                        ),
-                      );
-              
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
                       } else {
                         boardingController.nextPage(
                           duration: const Duration(milliseconds: 300),
@@ -117,18 +117,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     },
                     child: Text(
                       "Next",
-                      style: TextStyles.styleSemiBold(
-                          context,
-                          fontSize: 20.sp,
-                          color: ColorsManager.blackColor
-                        ),
-                      
+                      style: TextStyles.styleSemiBold(context,
+                          fontSize: 20.sp, color: ColorsManager.blackColor),
                     ),
                   ),
                 ],
               ),
             ),
-             const SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

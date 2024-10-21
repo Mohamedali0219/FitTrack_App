@@ -6,13 +6,16 @@ import 'package:fit_track_app/features/reminder/ui/widget/reminder_date_widget/r
 import 'package:fit_track_app/features/reminder/ui/widget/reminder_time_widget/reminder_time_widget.dart';
 import 'package:flutter/material.dart';
 
-void buildShowBottomSheet (BuildContext context){
+void buildShowBottomSheet(BuildContext context) {
   showModalBottomSheet(
     context: context,
     backgroundColor: ColorsManager.whiteColor,
-    builder: (BuildContext context){
+    builder: (BuildContext context) {
       return Container(
-        padding: const EdgeInsets.only(right: 20.0, left: 20.0,),
+        padding: const EdgeInsets.only(
+          right: 20.0,
+          left: 20.0,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,7 +35,7 @@ void buildShowBottomSheet (BuildContext context){
                   ),
                 ),
                 IconButton(
-                  onPressed: (){
+                  onPressed: () {
                     context.pop();
                   },
                   icon: const Icon(
@@ -44,12 +47,20 @@ void buildShowBottomSheet (BuildContext context){
               ],
             ),
             const ReminderDateWidget(),
-            const SizedBox(height: 15.0,),
+            const SizedBox(
+              height: 15.0,
+            ),
             const ReminderTimeWidget(),
-            const SizedBox(height: 15.0,),
+            const SizedBox(
+              height: 15.0,
+            ),
             const ListTile(
               contentPadding: EdgeInsets.all(0),
-              leading: Icon(Icons.notifications_none_outlined, size: 15, color: ColorsManager.blackColor,),
+              leading: Icon(
+                Icons.notifications_none_outlined,
+                size: 15,
+                color: ColorsManager.blackColor,
+              ),
               title: Text('Set Reminder'),
               titleTextStyle: TextStyle(
                 color: ColorsManager.textBaseColor,
@@ -68,15 +79,14 @@ void buildShowBottomSheet (BuildContext context){
             ),
             const Spacer(),
             defaultButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 background: ColorsManager.primaryColor,
                 text: 'Done',
                 fontSize: 22,
-                radius: 8
+                radius: 8),
+            const SizedBox(
+              height: 10.0,
             ),
-            const SizedBox(height: 10.0,),
           ],
         ),
       );

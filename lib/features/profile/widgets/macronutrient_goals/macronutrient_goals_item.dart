@@ -10,10 +10,12 @@ class MacronuTrientGoalsItem extends StatelessWidget {
       required this.text1,
       required this.text2,
       required this.text3});
+
   final String image;
   final String text1;
   final String text2;
   final String text3;
+
   @override
   Widget build(BuildContext context) {
     return Column(

@@ -15,7 +15,6 @@ class AppSettingsScreen extends StatefulWidget {
 }
 
 class _AppSettingsScreenState extends State<AppSettingsScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,17 +22,29 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
         title: 'App Setting',
         isback: true,
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeLayout(),),);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HomeLayout(),
+            ),
+          );
         },
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SizedBox(
           height: MediaQuery.sizeOf(context).height,
-          child:  Column(
+          child: Column(
             children: [
               SettingsAppItems(
-                onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const ReminderScreen(),),);},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ReminderScreen(),
+                    ),
+                  );
+                },
                 icon: Icons.notifications_none,
                 title: 'Reminder',
                 training: const SizedBox(),
@@ -60,15 +71,14 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
               ),
               const Spacer(),
               defaultButton(
-                onPressed: () {
-
-                },
-                background: ColorsManager.primaryColor,
-                text: 'Upgrade premium',
-                fontSize: 22,
-                radius: 8
+                  onPressed: () {},
+                  background: ColorsManager.primaryColor,
+                  text: 'Upgrade premium',
+                  fontSize: 22,
+                  radius: 8),
+              const SizedBox(
+                height: 3,
               ),
-              const SizedBox(height: 3,),
               const Text(
                 'Version 1.0',
                 style: TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/themes/colors_manager.dart';
 
 Widget customButton({
@@ -24,9 +25,3 @@ Widget customButton({
                 fontWeight: FontWeight.bold)),
       ),
     );
-
-
-
-
-
-

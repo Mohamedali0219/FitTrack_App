@@ -1,4 +1,3 @@
-
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:flutter/material.dart';
 
@@ -18,15 +17,19 @@ class _SwitchBtnWidgetState extends State<SwitchBtnWidget> {
       value: _lights,
       inactiveThumbColor: ColorsManager.whiteColor,
       inactiveTrackColor: const Color(0xFF9D9D9D),
-      thumbColor: const WidgetStatePropertyAll(ColorsManager.whiteColor,),
-      activeColor:ColorsManager.primaryColor,
-      trackOutlineColor: const WidgetStatePropertyAll(Color(0xFF9D9D9D),),
+      thumbColor: const WidgetStatePropertyAll(
+        ColorsManager.whiteColor,
+      ),
+      activeColor: ColorsManager.primaryColor,
+      trackOutlineColor: const WidgetStatePropertyAll(
+        Color(0xFF9D9D9D),
+      ),
       activeTrackColor: ColorsManager.primaryColor,
       trackOutlineWidth: const WidgetStatePropertyAll(0),
       onChanged: (bool value) {
         setState(() {
-        _lights = value;
-      });
+          _lights = value;
+        });
       },
     );
   }

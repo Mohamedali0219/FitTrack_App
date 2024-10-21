@@ -16,11 +16,14 @@ class MealPlansItems extends StatelessWidget {
             width: 300,
             height: 155,
             decoration: const ShapeDecoration(
-              image: DecorationImage(image: AssetImage('assets/images/meal1.png')),
+              image:
+                  DecorationImage(image: AssetImage('assets/images/meal1.png')),
               shape: ContinuousRectangleBorder(),
             ),
           ),
-          const SizedBox(height: 15,),
+          const SizedBox(
+            height: 15,
+          ),
           const Text(
             'Greek salad with lettuce, green onion, ',
             style: TextStyle(
@@ -30,7 +33,9 @@ class MealPlansItems extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
           ),
-          const SizedBox(height: 8,),
+          const SizedBox(
+            height: 8,
+          ),
           const Text(
             '150 kcal',
             style: TextStyle(

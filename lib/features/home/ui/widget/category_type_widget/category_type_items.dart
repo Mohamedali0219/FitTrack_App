@@ -3,12 +3,12 @@ import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CategoryTypeItems extends StatelessWidget {
-  const CategoryTypeItems(
-      {super.key, this.isSelected = false, required this.categoryTypeName, required this.categoryTypeImage});
+  const CategoryTypeItems({
+    super.key,
+    required this.categoryName,
+  });
 
-  final bool isSelected;
-  final String categoryTypeName;
-  final String categoryTypeImage;
+  final Map<String, dynamic> categoryName;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,11 @@ class CategoryTypeItems extends StatelessWidget {
             width: 61,
             height: 61,
             decoration: ShapeDecoration(
-              image: DecorationImage(image: AssetImage(categoryTypeImage)),
+              image: DecorationImage(
+                image: NetworkImage(
+                  categoryName['imageUrl'],
+                ),
+              ),
               shape: const OvalBorder(),
             ),
           ),
@@ -30,7 +34,7 @@ class CategoryTypeItems extends StatelessWidget {
             height: 10,
           ),
           Text(
-            categoryTypeName,
+            categoryName['name'],
             style: TextStyles.styleBold(
               context,
               fontSize: 11,
