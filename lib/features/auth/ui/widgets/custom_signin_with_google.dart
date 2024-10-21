@@ -37,10 +37,11 @@ class CustomGoogleButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () async {
           await signInWithGoogle().then((value) {
-            print(value.user!.uid);
+            // print(value.user!.uid);
           }).catchError((error) {
-            print(error);
+            // print(error);
           });
+          // ignore: use_build_context_synchronously
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
               builder: (context) => const OnboardingScreens(),

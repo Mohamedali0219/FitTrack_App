@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     var user= UserModel.instance;
-    print(user.toString());
+    // print(user.toString());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,

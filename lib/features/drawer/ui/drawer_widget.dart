@@ -101,6 +101,7 @@ class DrawerWidget extends StatelessWidget {
                     await FirebaseAuth.instance.signOut();
                     GoogleSignIn googleSignIn = GoogleSignIn();
                     googleSignIn.disconnect();
+                    // ignore: use_build_context_synchronously
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
                         builder: (context) => const LoginScreen(),

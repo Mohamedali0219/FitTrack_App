@@ -64,9 +64,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 merge:
                     true)); // merge: true ensures the document is updated if it exists
 
-        print("User data successfully set.");
+        // print("User data successfully set.");
       } catch (e) {
-        print("Failed to set user data: $e");
+        // print("Failed to set user data: $e");
       }
     }
 
@@ -225,6 +225,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           user.setWeight = whightController.text;
                         });
                       }
+                      // ignore: use_build_context_synchronously
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
                           builder: (context) => const ProfileScreen(),

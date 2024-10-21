@@ -56,9 +56,11 @@ class ForgetPassword extends StatelessWidget {
                       await FirebaseAuth.instance
                           .sendPasswordResetEmail(email: email!);
                       showToast(
+                          // ignore: use_build_context_synchronously
                           context,
                           " Please check your email for reset password",
                           ToastificationType.success);
+                      // ignore: use_build_context_synchronously
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const LoginScreen(),
@@ -66,6 +68,7 @@ class ForgetPassword extends StatelessWidget {
                       );
                     }
                   } on Exception catch (e) {
+                    // ignore: use_build_context_synchronously
                     showToast(context, e.toString(), ToastificationType.error);
                   }
                   // Navigator.of(context).push(

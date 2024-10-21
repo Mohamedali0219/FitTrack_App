@@ -106,12 +106,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         formKey.currentState!.save();
                         try {
                           await registerUser(email, password ,fullName!, phone! );
+                          // ignore: use_build_context_synchronously
                           showToast(context, "successfully created account",
                               ToastificationType.success);
 
                           // if (FirebaseAuth
                           //     .instance.currentUser!.emailVerified) {
                           Navigator.pushReplacement(
+                            // ignore: use_build_context_synchronously
                             context,
                             MaterialPageRoute(
                               builder: (context) => const OnboardingScreens(),
@@ -125,13 +127,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             showToast(
+                                // ignore: use_build_context_synchronously
                                 context,
                                 'The password provided is too weak.',
                                 ToastificationType.error);
                           } else if (e.code == 'email-already-in-use') {
+                            // ignore: use_build_context_synchronously
                             showToast(context, "'Email already in use.'",
                                 ToastificationType.error);
                           } else if (e.code == 'invalid-email') {
+                            // ignore: use_build_context_synchronously
                             showToast(context, 'The email address is invalid.',
                                 ToastificationType.error);
                           }

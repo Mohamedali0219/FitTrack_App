@@ -104,8 +104,10 @@ class LoginScreen extends StatelessWidget {
                         if (formKey.currentState!.validate()) {
                           try {
                             await loginUser();
+                            // ignore: use_build_context_synchronously
                             showToast(context, "Login Successful",
                                 ToastificationType.success);
+                            // ignore: use_build_context_synchronously
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
                                 builder: (context) => const HomeLayout(),
@@ -114,16 +116,19 @@ class LoginScreen extends StatelessWidget {
                           } on FirebaseAuthException catch (e) {
                             if (e.code == 'user-not-found') {
                               showToast(
+                                  // ignore: use_build_context_synchronously
                                   context,
                                   "No user found for that email.",
                                   ToastificationType.error);
                             } else if (e.code == 'invalid-email') {
                               showToast(
+                                  // ignore: use_build_context_synchronously
                                   context,
                                   'The email address is invalid.',
                                   ToastificationType.error);
                             } else if (e.code == 'wrong-password') {
                               showToast(
+                                  // ignore: use_build_context_synchronously
                                   context,
                                   "Wrong password provided for that user.",
                                   ToastificationType.error);

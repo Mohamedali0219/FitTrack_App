@@ -27,11 +27,7 @@ class HomeAppBarWidget extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {
-                  if (ZoomDrawer.of(context) != null) {
-                    ZoomDrawer.of(context)!.toggle();
-                  } else {
-                    print("ZoomDrawer is not found in the widget tree.");
-                  }
+                  ZoomDrawer.of(context)!.toggle();
                 },
                 icon: setPhoto(
                   kind: 1,
