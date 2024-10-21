@@ -1,6 +1,7 @@
 import 'package:fit_track_app/features/onboarding/screens/home_view.dart';
 import 'package:flutter/material.dart';
 
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -81,6 +82,7 @@ class SplashScreenState extends State<SplashScreen>
   }
 }
 
+
 // import 'package:flutter/material.dart';
 // class SplashView extends StatefulWidget {
 //   const SplashView({super.key});
@@ -90,7 +92,7 @@ class SplashScreenState extends State<SplashScreen>
 // }
 
 // class _SplashViewState extends State<SplashView> {
-
+  
 //   @override
 //   Widget build(BuildContext context) {
 //     return  const Scaffold(
@@ -126,3 +128,4 @@ class SplashScreenState extends State<SplashScreen>
 //       );
 //   }
 // }
+
