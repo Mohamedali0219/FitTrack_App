@@ -1,4 +1,3 @@
-
 import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:fit_track_app/features/profile/widgets/goal_type_widget/goal_type_listview.dart';
@@ -22,7 +21,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    var user= UserModel.instance;
+    var user = UserModel.instance;
     // print(user.toString());
     return Scaffold(
       appBar: AppBar(
@@ -88,19 +87,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             const SizedBox(height: 10),
             Center(
-                    child: Text(
-                      user.getFullName ?? '',
-                      style: TextStyles.styleSemiBold(context,
-                          fontSize: 16, color: ColorsManager.textBaseColor),
-                    ),
-                  ),
+              child: Text(
+                user.getFullName ?? '',
+                style: TextStyles.styleSemiBold(context,
+                    fontSize: 16, color: ColorsManager.textBaseColor),
+              ),
+            ),
             Center(
-                    child: Text(
-                      user.getPhone?? '',
-                      style: TextStyles.styleSemiBold(context,
-                          fontSize: 16, color: ColorsManager.textBaseColor),
-                    ),
-                  ),
+              child: Text(
+                user.getPhone ?? '',
+                style: TextStyles.styleSemiBold(context,
+                    fontSize: 16, color: ColorsManager.textBaseColor),
+              ),
+            ),
             const SizedBox(height: 10),
             const InfoRow(),
             const SizedBox(height: 20),

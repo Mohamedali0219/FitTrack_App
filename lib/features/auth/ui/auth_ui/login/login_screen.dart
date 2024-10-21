@@ -12,17 +12,20 @@ import 'package:toastification/toastification.dart';
 import '../../../functions.dart';
 import '../sign_up/sign_up_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+   TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
-    GlobalKey<FormState> formKey = GlobalKey<FormState>();
+   
     String? email;
     String? password;
-    bool isHiddenPassword = false;
+    bool showPassword = false;
 
     Future<void> loginUser() async {
       var res = await FirebaseAuth.instance
@@ -34,6 +37,10 @@ class LoginScreen extends StatelessWidget {
       // print(UserModel.instance.toString());
       // print(  " user is  ${SharedPreference().getString(key: "user")}");
     }
+  @override
+  Widget build(BuildContext context) {
+   
+     GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
     return Form(
       key: formKey,
@@ -66,16 +73,16 @@ class LoginScreen extends StatelessWidget {
                       label: "Email address",
                       radius: 8.0),
                   const SizedBox(height: 16),
-                  defaultTextFormField(
+                  buildPasswordField(
                       onChange: (value) => password = value,
                       prefixIcon: Icons.lock,
-                      suffixIcon: const Icon(Icons.visibility_outlined),
-                      hintText: "********",
-                      controller: passwordController,
+                      keyboardType: TextInputType.visiblePassword,
                       label: "Password",
+                      showPassword: showPassword,
+                      controller: passwordController,
                       radius: 8.0,
-                      obscureText: isHiddenPassword,
-                      keyboardType: TextInputType.visiblePassword),
+                      changePasswordVisibility: () =>
+                          setState(() => showPassword = !showPassword)),
                   const SizedBox(height: 16),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,

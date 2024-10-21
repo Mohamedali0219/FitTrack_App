@@ -19,26 +19,21 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController fullNameController = TextEditingController();
+
+  String? email;
+  String? password;
+  String? fullName;
+  String? phone;
+
+  bool showPassword = false;
+
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final TextEditingController phoneController = TextEditingController();
-    final TextEditingController fullNameController = TextEditingController();
     GlobalKey<FormState> formKey = GlobalKey();
-
-    String? email;
-    String? password;
-    String? fullName;
-    String? phone;
-
-    bool showPassword = false;
-    // void togglePasswordView() {
-    //   setState(() {
-    //     isHiddenPassword = !isHiddenPassword;
-    //   });
-    // }
-
     return Form(
       key: formKey,
       child: Scaffold(
@@ -99,13 +94,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       radius: 8.0,
                       changePasswordVisibility: () =>
                           setState(() => showPassword = !showPassword)),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 30),
                   customButton(
                     onPressed: () async {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState!.save();
                         try {
-                          await registerUser(email, password ,fullName!, phone! );
+                          await registerUser(
+                              email, password, fullName!, phone!);
                           // ignore: use_build_context_synchronously
                           showToast(context, "successfully created account",
                               ToastificationType.success);
@@ -187,16 +183,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Future<void> registerUser(String? email, String? password  ,String? fullName, String ? phone) async {
+  Future<void> registerUser(
+      String? email, String? password, String? fullName, String? phone) async {
     UserCredential userCredential = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email!, password: password!);
     // await FirebaseAuth.instance.currentUser!.sendEmailVerification();
-    UserModel.instance.setNewUser(id: userCredential.user!.uid, email: email, name: fullName!, phone: phone!);
-    await FirebaseFirestore.instance.collection('users').doc(userCredential.user!.uid).set({
+    UserModel.instance.setNewUser(
+        id: userCredential.user!.uid,
+        email: email,
+        name: fullName!,
+        phone: phone!);
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userCredential.user!.uid)
+        .set({
       'fullName': fullName,
       'phone': phone,
       'email': email,
     });
   }
 }
-
