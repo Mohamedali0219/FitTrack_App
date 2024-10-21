@@ -21,7 +21,7 @@ class MealsDetialsScreen extends StatelessWidget {
       backgroundColor: ColorsManager.whiteColor,
       body: CustomScrollView(
         slivers: [
-          const MealDetialsAppBar(),
+          MealDetialsAppBar(mealModel: mealModel,),
           SliverList(
             delegate: SliverChildListDelegate(
               [
@@ -35,10 +35,11 @@ class MealsDetialsScreen extends StatelessWidget {
                         color: ColorsManager.whiteColor,
                         child: Column(
                           children: [
-                            const KcalAndClockSction(
-                                kcal: '250 Kcla', clock: '15 min'),
-                            const NutrientSction(
-                              fats: '10g',
+                            KcalAndClockSction(
+                                kcal: '${mealModel.calories} Kcla',
+                                clock: '${mealModel.calories} min'),
+                            NutrientSction(
+                              fats: '${mealModel.calories}g',
                               protein: '20g',
                               carbs: '30g',
                             ),
@@ -47,10 +48,9 @@ class MealsDetialsScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 16.h),
-                      const MealDescriptionInfo(
-                        title: 'Healthy balanced vegetarian food',
-                        description:
-                            'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour,',
+                      MealDescriptionInfo(
+                        title: mealModel.name,
+                        description: mealModel.description,
                       ),
                       SizedBox(
                         width: 280.w,

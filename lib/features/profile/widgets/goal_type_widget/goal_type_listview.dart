@@ -1,5 +1,5 @@
-import 'package:fit_track_app/features/home/ui/widget/category_type_widget/category_type_items.dart';
 import 'package:flutter/material.dart';
+import 'goal_type_items.dart';
 
 class CategoryTypeListview extends StatefulWidget {
   const CategoryTypeListview({super.key});
@@ -33,9 +33,11 @@ class _CategoryTypeListviewState extends State<CategoryTypeListview> {
         scrollDirection: Axis.horizontal,
         itemCount: categoryTypesName.length,
         itemBuilder: (context, index) {
-          // return CategoryTypeItems(
-          //   categoryTypeName: categoryTypesName[index],
-          // );
+          return CategoryGoalTypeItems(
+            categoryTypeName: categoryTypesName[index],
+            categoryTypeImage: categoryTypesImages[index],
+          );
+
         },
       ),
     );

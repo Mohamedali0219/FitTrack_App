@@ -2,8 +2,8 @@ import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:flutter/material.dart';
 
-class CategoryTypeItems extends StatelessWidget {
-  const CategoryTypeItems(
+class CategoryGoalTypeItems extends StatelessWidget {
+  const CategoryGoalTypeItems(
       {super.key,
       this.isSelected = false,
       required this.categoryTypeName,

@@ -9,7 +9,7 @@ import 'package:fit_track_app/features/exercise/logic/exercise_bloc/exercise_eve
 import 'package:fit_track_app/features/exercise/logic/services/exercise_services.dart';
 import 'package:fit_track_app/features/splash/splash_view.dart';
 import 'package:fit_track_app/features/meals/logic/cubit/get_meals_cubit.dart';
-import 'package:fit_track_app/features/meals/ui/meals_screen.dart';
+import 'package:fit_track_app/features/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -68,6 +68,7 @@ class _FitTrackAppState extends State<FitTrackApp> {
             home: FirebaseAuth.instance.currentUser == null
                 ? const LoginScreen()
                 : const SplashScreen(),
+            home: const SplashScreen(),
           ),
         ),
       ),
