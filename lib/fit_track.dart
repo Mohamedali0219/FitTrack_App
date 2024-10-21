@@ -8,9 +8,12 @@ import 'package:fit_track_app/features/exercise/logic/exercise_bloc/exercise_blo
 import 'package:fit_track_app/features/exercise/logic/exercise_bloc/exercise_event.dart';
 import 'package:fit_track_app/features/exercise/logic/services/exercise_services.dart';
 import 'package:fit_track_app/features/splash/splash_view.dart';
+import 'package:fit_track_app/features/meals/logic/cubit/get_meals_cubit.dart';
+import 'package:fit_track_app/features/meals/ui/meals_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class FitTrackApp extends StatefulWidget {
   const FitTrackApp({super.key});
@@ -50,6 +53,7 @@ class _FitTrackAppState extends State<FitTrackApp> {
                 ExerciseImageService(),
               )..add(FetchExercises()), // Fetch categories on startup
             ),
+            BlocProvider<GetMealsCubit>(create: (context) => GetMealsCubit()),
           ],
           child: MaterialApp(
             title: 'Fit Track',
