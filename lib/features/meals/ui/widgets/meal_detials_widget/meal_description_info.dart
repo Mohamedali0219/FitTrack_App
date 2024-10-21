@@ -23,7 +23,7 @@ class MealDescriptionInfo extends StatelessWidget {
             title,
             style: TextStyles.styleBold(
               context,
-              fontSize: 28,
+              fontSize: 20,
               fontFamily: TextStyles.bebasNeue,
               color: ColorsManager.textBaseColor,
             ),
@@ -35,7 +35,7 @@ class MealDescriptionInfo extends StatelessWidget {
             description,
             style: TextStyles.styleSemiBold(
               context,
-              fontSize: 15,
+              fontSize: 12,
               color: ColorsManager.textSecondaryColor,
             ),
           ),

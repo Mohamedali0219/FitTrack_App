@@ -1,6 +1,5 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
-import 'package:fit_track_app/core/utils/app_image.dart';
 import 'package:fit_track_app/features/meals/data/model/meal.dart';
 import 'package:fit_track_app/features/meals/ui/widgets/meal_detials_widget/custom_nutrient_info_meal_plan.dart';
 import 'package:flutter/material.dart';
@@ -20,8 +19,8 @@ class MealPlanItem extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              AppImage.food1Image,
+            child: Image.network(
+              mealModel.imageUrl,
               width: 120.w,
               height: 100.h,
               fit: BoxFit.fill,
@@ -33,7 +32,7 @@ class MealPlanItem extends StatelessWidget {
               SizedBox(
                 width: 210.w,
                 child: Text(
-                  'Tortilla wrap with falafel and fresh salad',
+                  '${mealModel.name}',
                   style: TextStyles.styleBold(
                     context,
                     fontSize: 17,

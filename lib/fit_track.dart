@@ -1,11 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/features/meals/logic/cubit/get_meals_cubit.dart';
-import 'package:fit_track_app/features/meals/ui/meals_screen.dart';
+import 'package:fit_track_app/features/splash/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class FitTrackApp extends StatefulWidget {
   const FitTrackApp({super.key});
@@ -45,7 +44,7 @@ class _FitTrackAppState extends State<FitTrackApp> {
               ),
               useMaterial3: true,
             ),
-            home: const MealsScreen(),
+            home: const SplashScreen(),
           ),
         ),
       ),

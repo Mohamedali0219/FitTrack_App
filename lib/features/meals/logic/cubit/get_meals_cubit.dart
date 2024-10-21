@@ -13,6 +13,7 @@ class GetMealsCubit extends Cubit<GetMealsState> {
   final GetMealsRepo getMealsRepo = GetMealsRepo();
 
   List<MealModel> meals = [];
+  List<NutritionModel> getNutrition = [];
 
   void getMealsBreakFast() async {
     emit(GetMealsLoading());

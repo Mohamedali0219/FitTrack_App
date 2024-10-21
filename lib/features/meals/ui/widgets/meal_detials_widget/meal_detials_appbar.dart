@@ -1,12 +1,14 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
 import 'package:fit_track_app/core/utils/app_icons.dart';
-import 'package:fit_track_app/core/utils/app_image.dart';
+import 'package:fit_track_app/features/meals/data/model/meal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MealDetialsAppBar extends StatelessWidget {
-  const MealDetialsAppBar({super.key});
+  const MealDetialsAppBar({super.key, required this.mealModel});
+
+  final MealModel mealModel;
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +37,16 @@ class MealDetialsAppBar extends StatelessWidget {
             color: ColorsManager.blackColor.withOpacity(0.5),
           ),
           child: Text(
-            'Oatmeal with Fruits',
+            // ignore: unnecessary_string_interpolations
+            '${mealModel.name}',
             style: TextStyles.styleBold(context,
                 fontSize: 16, color: ColorsManager.whiteColor),
           ),
         ),
         background: Hero(
-          tag: 'Oatmeal with Fruits',
-          child: Image.asset(
-            AppImage.food1Image,
+          tag: mealModel.name,
+          child: Image.network(
+            mealModel.imageUrl,
             fit: BoxFit.cover,
           ),
         ),

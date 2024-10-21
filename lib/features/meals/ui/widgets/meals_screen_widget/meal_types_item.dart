@@ -21,7 +21,7 @@ class MealTypesItems extends StatelessWidget {
       child: Text(mealType,
           style: TextStyles.styleBold(
             context,
-            fontSize: 20,
+            fontSize: 15,
             color: isSelected
                 ? ColorsManager.whiteColor
                 : ColorsManager.textSecondaryColor,

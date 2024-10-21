@@ -1,6 +1,5 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/themes/text_styles.dart';
-import 'package:fit_track_app/core/utils/app_image.dart';
 import 'package:fit_track_app/features/meals/data/model/meal.dart';
 import 'package:fit_track_app/features/meals/ui/widgets/kcal_clock.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +19,10 @@ class MealItem extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 230.h,
-              decoration: const BoxDecoration(
+              height: 300.h,
+              decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(AppImage.food1Image),
+                  image: NetworkImage(mealModel.imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -39,10 +38,14 @@ class MealItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          mealModel.name,
+                          mealModel.name.length > 25
+                              ? '${mealModel.name.substring(0, 25)}...'
+                              : mealModel.name,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
                           style: TextStyles.styleBold(
                             context,
-                            fontSize: 24,
+                            fontSize: 15,
                             color: ColorsManager.whiteColor,
                           ),
                         ),
@@ -52,7 +55,7 @@ class MealItem extends StatelessWidget {
                             backgroundColor:
                                 ColorsManager.whiteColor.withOpacity(0.4),
                             child: const Icon(
-                              size: 30,
+                              size: 20,
                               Icons.favorite_border,
                               color: ColorsManager.whiteColor,
                             ),
@@ -75,9 +78,11 @@ class MealItem extends StatelessWidget {
                       children: [
                         Text(
                           mealModel.description,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
                           style: TextStyles.styleBold(
                             context,
-                            fontSize: 24,
+                            fontSize: 13,
                             color: ColorsManager.whiteColor,
                           ),
                         ),
@@ -87,8 +92,8 @@ class MealItem extends StatelessWidget {
                 ],
               ),
             ),
-            const KcalAndClockSction(
-              kcal: '250 Kcal',
+            KcalAndClockSction(
+              kcal: '${mealModel.calories} Kcal',
               clock: '15 min',
             )
           ],

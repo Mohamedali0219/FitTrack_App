@@ -5,6 +5,7 @@ class MealModel {
   final String description;
   final String mealType;
   final double calories;
+  final String imageUrl ;
 
   MealModel({
     required this.id,
@@ -12,11 +13,14 @@ class MealModel {
     required this.description,
     required this.mealType,
     required this.calories,
+    required this.imageUrl 
+  
   });
 
   factory MealModel.fromFirestore(Map<String, dynamic> data, String id) {
     return MealModel(
       id: id,
+      imageUrl: data['imageUrl'] as String,
       name: data['name'] as String,
       description: data['description'] as String,
       mealType: data['mealType'] as String,
@@ -31,6 +35,7 @@ class MealModel {
     if (identical(this, other)) return true;
 
     return other.id == id &&
+        other.imageUrl == imageUrl &&
         other.name == name &&
         other.description == description &&
         other.mealType == mealType &&
@@ -43,6 +48,7 @@ class MealModel {
         name.hashCode ^
         description.hashCode ^
         mealType.hashCode ^
+        imageUrl.hashCode ^
         calories.hashCode;
   }
 }
