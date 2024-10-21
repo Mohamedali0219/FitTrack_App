@@ -1,11 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
-import 'package:fit_track_app/features/home/ui/home_screen.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'features/auth/ui/auth_ui/login/login_screen.dart';
 import 'features/splash/splash_view.dart';
 
 class FitTrackApp extends StatefulWidget {
@@ -42,11 +38,7 @@ class _FitTrackAppState extends State<FitTrackApp> {
             ),
             useMaterial3: true,
           ),
-          home: 
-          FirebaseAuth.instance.currentUser == null
-              ? const LoginScreen()
-              : const SplashScreen(),
-          // const SplashScreen(),
+          home: const SplashScreen(),
         ),
       ),
     );

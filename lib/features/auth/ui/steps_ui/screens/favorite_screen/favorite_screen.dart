@@ -25,7 +25,7 @@ class _BuildFavoriteScreenState extends State<BuildFavoriteScreen> {
           const SizedBox(height: 10),
           const Text("Step 1 of 7"),
           const Text(
-            "SELECT YOUR FAVORITE",
+            "SELECT YOUR FAVORITE SPORTS",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20),

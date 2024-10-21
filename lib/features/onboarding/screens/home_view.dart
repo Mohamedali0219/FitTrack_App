@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fit_track_app/features/auth/ui/auth_ui/login/login_screen.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ class HomeViewBody extends StatelessWidget {
                       SharedPreference().getBool(key: "onBoarding") == true
                           ? SharedPreference().getString(key: "user") == '' ||
                                   SharedPreference().getString(key: "user") ==
-                                      null
+                                      null ||  FirebaseAuth.instance.currentUser == null
                               ? const LoginScreen()
                               : const HomeLayout()
                           : const OnBoardingScreen(),
