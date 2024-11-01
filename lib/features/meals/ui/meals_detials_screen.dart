@@ -16,7 +16,7 @@ class MealsDetialsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(mealModel.name);
+    debugPrint(mealModel.name);
     return Scaffold(
       backgroundColor: ColorsManager.whiteColor,
       body: CustomScrollView(
