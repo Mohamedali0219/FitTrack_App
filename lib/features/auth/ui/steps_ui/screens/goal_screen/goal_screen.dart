@@ -2,7 +2,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fit_track_app/shared_preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../../../data/model/user.dart';
 import '../../../widgets/custom_button.dart';

@@ -4,7 +4,6 @@ import 'package:fit_track_app/core/widgets/custom_button.dart';
 import 'package:fit_track_app/features/exercise/ui/widget/bottom_sheet_widget/bottom_sheet_widget.dart';
 import 'package:fit_track_app/features/exercise/ui/widget/training_kind_widget/training_kind_listview.dart';
 import 'package:fit_track_app/features/exercise/ui/widget/training_time_widget/training_time_screen.dart';
-import 'package:fit_track_app/features/home/ui/home_screen.dart';
 import 'package:fit_track_app/features/home/ui/widget/additional_exercise_widget/additional_exercise_listview.dart';
 import 'package:flutter/material.dart';
 
