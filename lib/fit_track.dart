@@ -9,7 +9,9 @@ import 'package:fit_track_app/features/exercise/logic/exercise_bloc/exercise_eve
 import 'package:fit_track_app/features/exercise/logic/services/exercise_services.dart';
 import 'package:fit_track_app/features/splash/splash_view.dart';
 import 'package:fit_track_app/features/meals/logic/cubit/get_meals_cubit.dart';
-import 'package:fit_track_app/features/splash/splash_view.dart';
+import 'package:fit_track_app/features/training/logic/popular_exercise_bloc/popular_exercise_bloc.dart';
+import 'package:fit_track_app/features/training/logic/popular_exercise_bloc/popular_exercise_event.dart';
+import 'package:fit_track_app/features/training/logic/services/popular_exercise_servcies.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -53,6 +55,12 @@ class _FitTrackAppState extends State<FitTrackApp> {
                 ExerciseImageService(),
               )..add(FetchExercises()), // Fetch categories on startup
             ),
+            BlocProvider(
+              create: (context) => PopularExerciseBloc(
+                PopularExerciseService(),
+                PopularExerciseImageService(),
+              )..add(FetchPopularExercises()), // Fetch categories on startup
+            ),
             BlocProvider<GetMealsCubit>(create: (context) => GetMealsCubit()),
           ],
           child: MaterialApp(
@@ -68,7 +76,6 @@ class _FitTrackAppState extends State<FitTrackApp> {
             home: FirebaseAuth.instance.currentUser == null
                 ? const LoginScreen()
                 : const SplashScreen(),
-            home: const SplashScreen(),
           ),
         ),
       ),
