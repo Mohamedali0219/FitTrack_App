@@ -1,9 +1,9 @@
 // exercise_event.dart
 import 'package:equatable/equatable.dart';
 
-abstract class TrainingEvent extends Equatable {
+abstract class PopularExerciseEvent extends Equatable {
   @override
   List<Object?> get props => [];
 }
 
-class FetchTrainings extends TrainingEvent {}
+class FetchPopularExercises extends PopularExerciseEvent {}

@@ -30,6 +30,7 @@ class AdditionalExerciseItems extends StatelessWidget {
                 image: NetworkImage(exercise['imageUrl']),
                 fit: BoxFit.fill,
               ),
+              borderRadius: BorderRadius.circular(12.0),
             ),
           ),
           const SizedBox(width: 15),
@@ -88,7 +89,7 @@ class AdditionalExerciseItems extends StatelessWidget {
                     width: 6,
                   ),
                   Text(
-                    '${exercise['time']} min',
+                    exercise['time'],
                     style: const TextStyle(
                       color: ColorsManager.textSecondaryColor,
                       fontSize: 10,

@@ -3,7 +3,9 @@ import 'package:fit_track_app/features/favorite_btn/ui/favorite_btn_widget/favor
 import 'package:flutter/material.dart';
 
 class PopularExerciseItems extends StatefulWidget {
-  const PopularExerciseItems({super.key});
+  const PopularExerciseItems({super.key, required this.popularExercise});
+
+  final Map<String, dynamic> popularExercise;
 
   @override
   State<PopularExerciseItems> createState() => _PopularExerciseItemsState();
@@ -27,11 +29,13 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
               Container(
                 width: 300,
                 height: 155,
-                decoration: const ShapeDecoration(
+                decoration: ShapeDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/images/exercise1.png'),
+                    image: NetworkImage(
+                      widget.popularExercise['imageUrl'],
+                    ),
                   ),
-                  shape: ContinuousRectangleBorder(),
+                  shape: const ContinuousRectangleBorder(),
                 ),
               ),
               Padding(
@@ -56,9 +60,9 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
           const SizedBox(
             height: 15,
           ),
-          const Text(
-            'Full Shot Man Stretching Arm',
-            style: TextStyle(
+          Text(
+            widget.popularExercise['name'],
+            style: const TextStyle(
               color: ColorsManager.textBaseColor,
               fontSize: 12,
               fontFamily: 'Montserrat',
@@ -72,9 +76,9 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const Text(
-                'Beginner',
-                style: TextStyle(
+              Text(
+                widget.popularExercise['description'],
+                style: const TextStyle(
                   color: Color(0xFF303841),
                   fontSize: 10,
                   fontFamily: 'Montserrat',
@@ -100,9 +104,9 @@ class _PopularExerciseItemsState extends State<PopularExerciseItems> {
               const SizedBox(
                 width: 6,
               ),
-              const Text(
-                '30 min',
-                style: TextStyle(
+               Text(
+                widget.popularExercise['time'],
+                style: const TextStyle(
                   color: ColorsManager.textSecondaryColor,
                   fontSize: 10,
                   fontFamily: 'Montserrat',

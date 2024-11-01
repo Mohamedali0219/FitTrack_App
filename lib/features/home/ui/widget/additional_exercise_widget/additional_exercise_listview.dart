@@ -1,7 +1,6 @@
 import 'package:fit_track_app/features/exercise/logic/exercise_bloc/exercise_bloc.dart';
 import 'package:fit_track_app/features/exercise/logic/exercise_bloc/exercise_state.dart';
 import 'package:fit_track_app/features/home/ui/widget/additional_exercise_widget/additional_exercise_items.dart';
-import 'package:fit_track_app/features/training/logic/training_bloc/training_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,7 +26,7 @@ class _AdditionalExerciseListviewState
         );
       } else if (state is ExerciseLoaded) {
         return SizedBox(
-          height: 140 * 3, // Adjust height as needed
+          height: 140 * 3.7, // Adjust height as needed
           child: ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),

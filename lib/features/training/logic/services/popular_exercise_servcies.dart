@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
-class TrainingService {
+class PopularExerciseService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  Future<List<Map<String, dynamic>>> getTrainings() async {
+  Future<List<Map<String, dynamic>>> getPopularExercises() async {
     QuerySnapshot snapshot = await _firestore.collection('Popular_Exercises').get();
     return snapshot.docs
         .map(
@@ -19,10 +19,10 @@ class TrainingService {
   }
 }
 
-class TrainingImageService {
+class PopularExerciseImageService {
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
-  Future<String> getTrainingImageUrl(String imagePath) async {
+  Future<String> getPopularExerciseImageUrl(String imagePath) async {
     return await _storage.ref('Training/$imagePath').getDownloadURL();
   }
 }
