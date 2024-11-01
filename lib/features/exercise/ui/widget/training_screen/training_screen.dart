@@ -1,3 +1,4 @@
+import 'package:fit_track_app/core/helper/Extension/navigation_extension.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/widgets/custom_button.dart';
 import 'package:fit_track_app/features/exercise/ui/widget/bottom_sheet_widget/bottom_sheet_widget.dart';
@@ -38,12 +39,7 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
               ),
               IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
-                    ),
-                  );
+                  context.pop();
                 },
                 icon: const Icon(
                   Icons.arrow_back_ios_outlined,

@@ -1,6 +1,6 @@
+import 'package:fit_track_app/core/helper/Extension/navigation_extension.dart';
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/widgets/custom_appbar.dart';
-import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:fit_track_app/features/filter/ui/filter_screen.dart';
 import 'package:fit_track_app/features/home/ui/widget/popular_exercise_widget/popular_exercise_listview.dart';
 import 'package:fit_track_app/features/training/ui/widget/training_level_widget/training_level_listview.dart';
@@ -17,12 +17,9 @@ class TrainingScreen extends StatelessWidget {
         isback: true,
         hasAction: true,
         icon: 'assets/icons/Filter-btn.svg',
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const HomeLayout(),
-          ),
-        ),
+        onPressed: () {
+          context.pop();
+        },
         hasActionOnPressed: () => Navigator.push(
           context,
           MaterialPageRoute(

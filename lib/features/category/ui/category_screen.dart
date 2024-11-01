@@ -1,7 +1,7 @@
+import 'package:fit_track_app/core/helper/Extension/navigation_extension.dart';
 import 'package:fit_track_app/core/widgets/custom_appbar.dart';
 import 'package:fit_track_app/features/category/logic/category_bloc/category_cubit.dart';
 import 'package:fit_track_app/features/category/logic/category_bloc/category_state.dart';
-import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
 import 'package:fit_track_app/features/home/ui/widget/category_type_widget/category_type_items.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,12 +24,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         title: 'Category',
         isback: true,
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const HomeLayout(),
-            ),
-          );
+          context.pop();
         },
       ),
       body: BlocBuilder<CategoryBloc, CategoryState>(builder: (context, state) {

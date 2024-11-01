@@ -1,9 +1,11 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
+import 'package:fit_track_app/features/meals/data/model/meal.dart';
 import 'package:flutter/material.dart';
 
 class MealPlansItems extends StatelessWidget {
-  const MealPlansItems({super.key});
+  const MealPlansItems({super.key, required this.meal});
 
+  final MealModel meal;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,17 +17,17 @@ class MealPlansItems extends StatelessWidget {
           Container(
             width: 300,
             height: 155,
-            decoration: const ShapeDecoration(
+            decoration: ShapeDecoration(
               image:
-                  DecorationImage(image: AssetImage('assets/images/meal1.png')),
-              shape: ContinuousRectangleBorder(),
+              DecorationImage(image: NetworkImage(meal.imageUrl), fit: BoxFit.cover),
+              shape: ContinuousRectangleBorder(borderRadius: BorderRadius.circular(16)),
             ),
           ),
           const SizedBox(
             height: 15,
           ),
-          const Text(
-            'Greek salad with lettuce, green onion, ',
+          Text(
+            meal.name,
             style: TextStyle(
               color: ColorsManager.textBaseColor,
               fontSize: 12,
@@ -36,8 +38,8 @@ class MealPlansItems extends StatelessWidget {
           const SizedBox(
             height: 8,
           ),
-          const Text(
-            '150 kcal',
+          Text(
+            meal.calories.toString() + ' Kcal',
             style: TextStyle(
               color: ColorsManager.textSecondaryColor,
               fontSize: 10,
