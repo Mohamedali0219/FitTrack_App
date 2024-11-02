@@ -32,15 +32,8 @@ class _PopularExerciseListviewState extends State<PopularExerciseListview> {
               scrollDirection: Axis.vertical,
               itemCount: state.popularExercises.length,
               itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedIndex = index;
-                    });
-                  },
-                  child: PopularExerciseItems(
-                    popularExercise: state.popularExercises[index],
-                  ),
+                return PopularExerciseItems(
+                  popularExercise: state.popularExercises[index],
                 );
               },
               separatorBuilder: (BuildContext context, int index) {

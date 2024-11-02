@@ -13,6 +13,7 @@ class PopularExerciseService {
         'imagePath': doc['imagePath'],
         'time': doc['time'],
         'description': doc['description'],
+        'uid': doc['uid'],
       },
     )
         .toList();
