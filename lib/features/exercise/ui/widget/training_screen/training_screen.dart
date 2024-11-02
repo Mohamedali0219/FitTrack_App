@@ -6,6 +6,7 @@ import 'package:fit_track_app/features/exercise/ui/widget/training_kind_widget/t
 import 'package:fit_track_app/features/exercise/ui/widget/training_time_widget/training_time_screen.dart';
 import 'package:fit_track_app/features/home/ui/widget/additional_exercise_widget/additional_exercise_listview.dart';
 import 'package:flutter/material.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class TrainingDetailsScreen extends StatefulWidget {
   const TrainingDetailsScreen({super.key, required this.exercise});
@@ -17,8 +18,30 @@ class TrainingDetailsScreen extends StatefulWidget {
 }
 
 class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
+
+  late final YoutubePlayerController _youtubePlayerController ;
+
+  @override
+  void dispose() {
+    _youtubePlayerController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final videoId = YoutubePlayer.convertUrlToId(widget.exercise['videoUrl']);
+
+    _youtubePlayerController= YoutubePlayerController(
+      initialVideoId: videoId!,
+      flags: YoutubePlayerFlags(
+        autoPlay: false,
+        mute: true,
+        loop: true,
+        forceHD: true,
+        enableCaption: true,
+      ),
+    );
+
     return Scaffold(
       body: Column(
         children: [
@@ -26,16 +49,7 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
             alignment: Alignment.topLeft,
             clipBehavior: Clip.none,
             children: [
-              Container(
-                width: MediaQuery.sizeOf(context).width,
-                height: 380,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/training1.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+              YoutubePlayer(controller: _youtubePlayerController),
               IconButton(
                 onPressed: () {
                   context.pop();
@@ -47,7 +61,7 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
                 ),
               ),
               Positioned(
-                top: 350,
+                top: 220,
                 left: MediaQuery.sizeOf(context).width * 0.5 - 160,
                 child: Container(
                   width: 320,
@@ -70,8 +84,8 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
                       const SizedBox(
                         width: 10,
                       ),
-                      const Text(
-                        '100 kcal',
+                       Text(
+                        widget.exercise['kcal'].toString(),
                         style: TextStyle(
                           color: ColorsManager.textSecondaryColor,
                           fontSize: 12,
@@ -98,8 +112,8 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
                       const SizedBox(
                         width: 10,
                       ),
-                      const Text(
-                        '10 min',
+                       Text(
+                        widget.exercise['time'].toString(),
                         style: TextStyle(
                           color: ColorsManager.textSecondaryColor,
                           fontSize: 12,
@@ -114,9 +128,9 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
             ],
           ),
           SizedBox(
-            height: MediaQuery.sizeOf(context).height - 483,
+            height: MediaQuery.sizeOf(context).height - 324,
             child: Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.only(right: 20.0, left: 20.0, top: 50.0, bottom: 20.0),
               child: ListView(
                 children: [
                   Row(
@@ -140,7 +154,7 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
                             height: 5,
                           ),
                           Chip(
-                            label: const Text('Beginner'),
+                            label: Text(widget.exercise['description']),
                             labelStyle: const TextStyle(
                               color: ColorsManager.textBaseColor,
                               fontSize: 12,
@@ -173,7 +187,7 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
                             height: 5,
                           ),
                           Chip(
-                            label: const Text('Cardio'),
+                            label: Text(widget.exercise['category']),
                             labelStyle: const TextStyle(
                               color: ColorsManager.textBaseColor,
                               fontSize: 12,
@@ -206,7 +220,7 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
                             height: 5,
                           ),
                           Chip(
-                            label: const Text('Lose'),
+                            label: Text(widget.exercise['weight']),
                             labelStyle: const TextStyle(
                               color: ColorsManager.textBaseColor,
                               fontSize: 12,
@@ -227,8 +241,8 @@ class _TrainingDetailsScreenState extends State<TrainingDetailsScreen> {
                   const SizedBox(
                     height: 20.0,
                   ),
-                  const Text(
-                    'Exercises with Sitting \nDumbbells',
+                  Text(
+                    widget.exercise['name'],
                     style: TextStyle(
                       color: ColorsManager.textBaseColor,
                       fontSize: 20,

@@ -14,6 +14,9 @@ class ExerciseService {
             'kcal': doc['kcal'],
             'time': doc['time'],
             'description': doc['description'],
+            'category': doc['category'],
+            'videoUrl': doc['videoUrl'],
+            'weight': doc['weight'],
           },
         )
         .toList();
