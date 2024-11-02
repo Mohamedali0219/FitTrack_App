@@ -1,5 +1,4 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
-import 'package:fit_track_app/features/auth/data/model/user.dart';
 import 'package:fit_track_app/features/favorite_btn/ui/favorite_btn_widget/favorite_btn_widget.dart';
 import 'package:flutter/material.dart';
 
