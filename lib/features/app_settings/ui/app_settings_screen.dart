@@ -4,7 +4,7 @@ import 'package:fit_track_app/core/widgets/custom_button.dart';
 import 'package:fit_track_app/features/app_settings/ui/widget/settings_app_items/settings_app_items.dart';
 import 'package:fit_track_app/features/app_settings/ui/widget/switch_btn_widget/switch_btn_widget.dart';
 import 'package:fit_track_app/features/drawer/ui/home_layout.dart';
-import 'package:fit_track_app/features/reminder/ui/reminder_screen.dart';
+import 'package:fit_track_app/features/reminder/ui/reminder_listview_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppSettingsScreen extends StatefulWidget {

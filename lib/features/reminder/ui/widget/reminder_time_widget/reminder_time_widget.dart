@@ -2,6 +2,10 @@ import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:fit_track_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
+late TimeOfDay time ;
+late String interval;
+String globalTime = '${time.hour}:${time.minute} $interval';
+
 class ReminderTimeWidget extends StatefulWidget {
   const ReminderTimeWidget({super.key});
 
@@ -12,6 +16,12 @@ class ReminderTimeWidget extends StatefulWidget {
 class _ReminderTimeWidgetState extends State<ReminderTimeWidget> {
   TimeOfDay selectedTime = TimeOfDay.now();
   String dayInterval = '';
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,15 +62,18 @@ class _ReminderTimeWidgetState extends State<ReminderTimeWidget> {
             if (timeOfDay != null) {
               setState(() {
                 selectedTime = timeOfDay;
+                time = selectedTime;
               });
             }
             if (selectedTime.hour > 12) {
               setState(() {
                 dayInterval = 'PM';
+                interval = dayInterval;
               });
             } else {
               setState(() {
                 dayInterval = 'AM';
+                interval = dayInterval;
               });
             }
           },

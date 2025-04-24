@@ -1,6 +1,9 @@
 import 'package:fit_track_app/core/themes/colors_manager.dart';
 import 'package:flutter/material.dart';
 
+bool? isOn;
+
+
 class SwitchBtnWidget extends StatefulWidget {
   const SwitchBtnWidget({super.key});
 
@@ -29,6 +32,7 @@ class _SwitchBtnWidgetState extends State<SwitchBtnWidget> {
       onChanged: (bool value) {
         setState(() {
           _lights = value;
+          isOn=_lights;
         });
       },
     );

@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
+DateTime? globalMonth,globalDay;
+String? globalDate = '${globalDay!.day.toString()} ${DateFormat.E().format(globalDay!)} ${DateFormat.MMMM().format(globalMonth!)} ${DateFormat.y().format(globalMonth!)}';
+String? today = '${DateTime.now().day.toString()} ${DateFormat.E().format(DateTime.now())} ${DateFormat.MMMM().format(DateTime.now())} ${DateFormat.y().format(DateTime.now())}';
+
 class ReminderDateWidget extends StatefulWidget {
   const ReminderDateWidget({super.key});
 
@@ -82,6 +86,7 @@ class ReminderDateWidgetState extends State<ReminderDateWidget> {
                       setState(() {
                         currentMonth =
                             DateTime(currentMonth.year, currentMonth.month - 1);
+                        globalMonth = currentMonth;
                       });
                     },
                   ),
@@ -145,6 +150,7 @@ class ReminderDateWidgetState extends State<ReminderDateWidget> {
                 onTap: () {
                   setState(() {
                     selectedDate = date;
+                    globalDay=selectedDate;
                   });
                 },
                 child: Container(
@@ -172,18 +178,19 @@ class ReminderDateWidgetState extends State<ReminderDateWidget> {
                       // Show CircleAvatar only if it's today
                       if (isToday)
                         CircleAvatar(
-                            radius: 15,
-                            backgroundColor: !isSelected
-                                ? Colors.transparent
-                                : ColorsManager.whiteColor,
-                            child: Text(
-                              date.day.toString(),
-                              style: TextStyles.styleSemiBold(
-                                context,
-                                fontSize: 14.sp,
-                                color: ColorsManager.blackColor,
-                              ),
-                            ))
+                          radius: 15,
+                          backgroundColor: !isSelected
+                              ? Colors.transparent
+                              : ColorsManager.whiteColor,
+                          child: Text(
+                            date.day.toString(),
+                            style: TextStyles.styleSemiBold(
+                              context,
+                              fontSize: 14.sp,
+                              color: ColorsManager.blackColor,
+                            ),
+                          ),
+                        )
                       else
                         // No circle for selected days, just white text
                         Text(
@@ -204,7 +211,6 @@ class ReminderDateWidgetState extends State<ReminderDateWidget> {
       ],
     );
   }
-
   @override
   void dispose() {
     scrollController.dispose();
